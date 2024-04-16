@@ -1,11 +1,16 @@
 # Projet ESGI 2024 framework Js
 
+
 ## Groupe
 
 - Théo MEUNIER - [Github](https://github.com/TheoMeunier)
 - Philippe DELENTE - [Github](https://github.com/PhilDaiguille)
 - Quentin ANDRIEU - [Github](https://github.com/Tinou95)
 
+# 📕 Maquette Figma
+
+Lien vers la
+maquette: [Lien figma](https://www.figma.com/file/LWce6zL5abt5GQGqduY9F0/ESGI-C-SM2?type=design&node-id=0%3A1&mode=design&t=uOVgw36mXCfgwXKV-1)
 ## Présentation du projet
 
 L'application a pour objectif de fournir aux utilisateurs une expérience interactive pour les Jeux
