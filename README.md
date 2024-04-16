@@ -23,13 +23,13 @@ filtrée et d'autres fonctionnalités bonus
 
 -1 **Carte interactive**
 
-- **Meilleurs spots**
+-2 **Meilleurs spots**
 
-- **Listing des événements sportifs**
+-3 **Listing des événements sportifs**
 
 -4 **Détail d'un spot**
 
-- **Recherche filtrée**
+-5 **Recherche filtrée**
 
 ## Fonctionnalités bonus /5
 
