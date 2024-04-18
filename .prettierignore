@@ -1,3 +1,5 @@
 doc
 docker
 .idea
+node_modules
+dist
