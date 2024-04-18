@@ -1,4 +1,4 @@
-import BrowserRouter from '../src/componennts/modules/BrowerRouter.js'
+import BrowserRouter from "../src/components/BrowerRouter.js";
 
 const JoDOM = {
     render: function (rootElement, routes) {
