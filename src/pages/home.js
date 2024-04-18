@@ -1,23 +1,17 @@
+import { NavBar } from "../components/navBar.js"
+
 export const Home = {
-    type: 'div',
+    type: "div",
     children: [
+        NavBar,
         {
-            type: 'h1',
+            type: "h1",
             children: [
                 {
-                    type: 'TEXT_NODE',
-                    content: 'Home Page',
-                },
-            ],
+                    type: "TEXT_NODE",
+                    content: "Home"
+                }
+            ]
         },
-        {
-            type: 'p',
-            children: [
-                {
-                    type: 'TEXT_NODE',
-                    content: 'Welcome to the Home Page',
-                },
-            ],
-        },
-    ],
+    ]
 }
