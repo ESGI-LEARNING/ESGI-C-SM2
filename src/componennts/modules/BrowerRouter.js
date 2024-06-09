@@ -1,7 +1,7 @@
 const BrowserRouter = function (routes, rootElement) {
     const generatePage = () => {
-        const path = location.pathname;
-        const structure = routes[path] ?? routes["*"];
+        let path = location.pathname;
+        let structure = routes[path] ?? routes["*"];
 
         if (rootElement.childNodes.length) {
             rootElement.replaceChild(
