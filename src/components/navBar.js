@@ -15,9 +15,5 @@ export const NavBar = {
             title: 'contact',
             to: '/contact',
         }),
-        BrowserLink({
-            title: 'map',
-            to: '/map',
-        }),
     ],
 };
