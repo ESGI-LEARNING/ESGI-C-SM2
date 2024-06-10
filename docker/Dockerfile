@@ -18,7 +18,7 @@ RUN mkdir -p /usr/share/nginx/html
 
 COPY --from=build /build/dist /usr/share/nginx/html
 COPY public /usr/share/nginx/html
-COPY docker/nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 RUN apk update && \
     apk upgrade && \

@@ -1,17 +1,24 @@
-import { NavBar } from "../../components/navBar.js";
+import { Header } from '../../components/header.js';
+import { Footer } from '../../components/footer.js';
+
 export const Events = {
-    type: "div",
+    type: 'div',
     children: [
-        NavBar,
+        Header,
         {
-            type: "h1",
+            type: 'main',
             children: [
                 {
-                    type: "TEXT_NODE",
-                    content: "Event"
-                }
-            ]
+                    type: 'h1',
+                    children: [
+                        {
+                            type: 'TEXT_NODE',
+                            content: 'Event',
+                        },
+                    ],
+                },
+            ],
         },
-    ]
-
-}
+        Footer
+    ],
+};
