@@ -1,6 +1,3 @@
 export const EventShow = () => {
-
-    return {
-
-    }
-}
+    return {};
+};
