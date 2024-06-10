@@ -1,7 +1,8 @@
 import { Header } from '../components/header.js';
 import { Footer } from '../components/footer.js';
+import { Leaflet } from '../components/leaflet.js';
 
-export const Contact = {
+export const Map = {
     type: 'div',
     children: [
         Header,
@@ -13,11 +14,24 @@ export const Contact = {
                     children: [
                         {
                             type: 'TEXT_NODE',
-                            content: 'Contact',
+                            content: 'Map',
                         },
                     ],
                 },
+                {
+                    type: 'div',
+                    props: {
+                        id: 'map',
+                        style: {
+                            height: '60vh',
+                        },
+                    },
+                    children: [],
+                },
             ],
+            events: {
+                mount: [Leaflet()],
+            },
         },
         Footer
     ],
