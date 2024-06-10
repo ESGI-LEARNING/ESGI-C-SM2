@@ -1,5 +1,5 @@
-import BrowserRouter from "../src/components/BrowerRouter.js";
-
+import BrowserRouter from '../src/components/BrowerRouter.js';
+import type_check from './typeCheck.js';
 const JoDOM = {
     render: function (rootElement, routes) {
         BrowserRouter.bind(this)(routes, rootElement);
@@ -8,8 +8,8 @@ const JoDOM = {
     renderStructure: function generateDom(structure) {
         let element;
 
-        if (typeof structure.type === "string") {
-            if (structure.type === "TEXT_NODE") {
+        if (typeof structure.type === 'string') {
+            if (structure.type === 'TEXT_NODE') {
                 return document.createTextNode(structure.content);
             }
 
@@ -18,10 +18,18 @@ const JoDOM = {
 
         if (structure.props) {
             for (const propName in structure.props) {
-                if (propName === "style") {
+                if (
+                    !type_check(
+                        structure.props[propName],
+                        typeof structure.props[propName],
+                    )
+                ) {
+                    console.warn(`Invalid type for prop "${propName}"`);
+                }
+                if (propName === 'style') {
                     Object.assign(element.style, structure.props[propName]);
-                } else if (propName.startsWith("data-")) {
-                    element.dataset[propName.replace("data-", "")] =
+                } else if (propName.startsWith('data-')) {
+                    element.dataset[propName.replace('data-', '')] =
                         structure.props[propName];
                 } else {
                     element.setAttribute(propName, structure.props[propName]);

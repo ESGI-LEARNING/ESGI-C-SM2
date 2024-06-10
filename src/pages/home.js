@@ -1,17 +1,17 @@
-import { NavBar } from "../components/navBar.js"
+import { NavBar } from '../components/navBar.js';
 
 export const Home = {
-    type: "div",
+    type: 'div',
     children: [
         NavBar,
         {
-            type: "h1",
+            type: 'h1',
             children: [
                 {
-                    type: "TEXT_NODE",
-                    content: "Home"
-                }
-            ]
+                    type: 'TEXT_NODE',
+                    content: 'Home',
+                },
+            ],
         },
-    ]
-}
+    ],
+};

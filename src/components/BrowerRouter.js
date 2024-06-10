@@ -1,12 +1,12 @@
 const BrowserRouter = function (routes, rootElement) {
     const generatePage = () => {
         const path = location.pathname;
-        const structure = routes[path] ?? routes["*"];
+        const structure = routes[path] ?? routes['*'];
 
         if (rootElement.childNodes.length) {
             rootElement.replaceChild(
                 this.renderStructure(structure),
-                rootElement.childNodes[0]
+                rootElement.childNodes[0],
             );
         } else rootElement.appendChild(this.renderStructure(structure));
     };
@@ -16,7 +16,7 @@ const BrowserRouter = function (routes, rootElement) {
     const oldPushState = history.pushState;
     history.pushState = function (state, title, url) {
         oldPushState.call(history, state, title, url);
-        window.dispatchEvent(new Event("popstate"));
+        window.dispatchEvent(new Event('popstate'));
     };
 
     window.onpopstate = generatePage;
@@ -24,7 +24,7 @@ const BrowserRouter = function (routes, rootElement) {
 
 export const BrowserLink = function (props) {
     return {
-        type: "a",
+        type: 'a',
         props: {
             href: props.to,
         },
@@ -38,7 +38,7 @@ export const BrowserLink = function (props) {
         },
         children: [
             {
-                type: "TEXT_NODE",
+                type: 'TEXT_NODE',
                 content: props.title,
             },
         ],
