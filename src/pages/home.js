@@ -41,6 +41,5 @@ export const Home = {
             children: [HeroHome, evenementList, mapHome],
         },
         Footer,
-        Footer,
     ],
 };
