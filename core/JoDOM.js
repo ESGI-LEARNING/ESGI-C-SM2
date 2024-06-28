@@ -82,6 +82,37 @@ const JoDOMRouter = {
             })
         }
 
+        if (structure.events) {
+            for (const eventName in structure.events) {
+                if (eventName === 'mounted') {
+                    setTimeout(() => {
+                        for (const callback of structure.events[eventName]) {
+                            callback(element);
+                        }
+                    }, 0);
+                } else {
+                    for (const eventListeners of structure.events[eventName]) {
+                        element.addEventListener(eventName, eventListeners);
+                    }
+                }
+            }
+        }
+
+        if (structure.loop) {
+            const container = document.createElement('ul');
+            for (let i = 0; i < structure.loop.count; i++) {
+                const loopElement = this.renderStructure({
+                    ...structure.loop.template,
+                    props: {
+                        ...structure.loop.template.props,
+                        'data-index': i,
+                    },
+                });
+                container.appendChild(loopElement);
+            }
+            return container;
+        }
+
         if (structure.children) {
             structure.children.forEach(child => {
                 const childNode = JoDOMRouter.renderStructure(child)
