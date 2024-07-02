@@ -444,10 +444,14 @@ footer ul li a img {
     margin-bottom: 4rem;
   }
   footer .logo-footer {
-    width: 6rem;
-  }
-  footer .logo-footer {
     display: none;
+  }
+  footer p::before {
+    position: absolute;
+    transform: translate(-225%, -255%);
+    width: 5rem;
+    height: 6rem;
+    object-fit: cover;
   }
 }
 header {
