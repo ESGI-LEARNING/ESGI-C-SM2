@@ -463,11 +463,15 @@ footer ul li a img {
   }
 
   footer .logo-footer {
-    width: 6rem;
+    display: none;
   }
 
-  footer .logo-footer {
-    display: none;
+  footer p::before {
+    position: absolute;
+    transform: translate(-225%, -255%);
+    width: 5rem;
+    height: 6rem;
+    object-fit: cover;
   }
 }
 
@@ -510,13 +514,16 @@ header nav ul li a {
   header {
     padding: 2rem 5rem;
   }
+
   header img {
     max-width: 6rem;
   }
+
   header nav ul {
     gap: 1.5rem;
   }
 }
+
 .hero-container {
   display: flex;
   justify-content: space-between;

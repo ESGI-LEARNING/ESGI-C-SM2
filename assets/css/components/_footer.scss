@@ -57,12 +57,17 @@ footer{
     p{
         margin-bottom: 4rem;
     }
-    .logo-footer{
-        width: 6rem;
-    }
-
     .logo-footer {
         display: none;
+    }
+    p {
+        &::before {
+            position: absolute;
+            transform: translate(-225%, -255%);
+            width: 5rem;
+            height: 6rem;
+            object-fit: cover;
+        }
     }
 }
     
