@@ -39,7 +39,7 @@ export const mapHome = {
                         {
                             type: 'TEXT_NODE',
                             content:
-                                "Le judo, littéralement \"voie de la souplesse\", est un art martial d'origine japonaise fondé par Jigoro Kano en 1882. Plus qu'une simple technique de combat, le judo est une discipline qui prône des valeurs d'humilité, de respect et de persévérance. Il s'agit d'un sport complet qui allie technique, force physique et stratégie mentale.",
+                                'Le judo, littéralement "voie de la souplesse", est un art martial d\'origine japonaise fondé par Jigoro Kano en 1882. Plus qu\'une simple technique de combat, le judo est une discipline qui prône des valeurs d\'humilité, de respect et de persévérance. Il s\'agit d\'un sport complet qui allie technique, force physique et stratégie mentale.',
                         },
                     ],
                 },

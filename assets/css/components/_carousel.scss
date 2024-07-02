@@ -1,7 +1,7 @@
 .carousel-container {
     display: flex;
     gap: 3rem;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
     padding: 2rem;
 
@@ -14,7 +14,7 @@
         justify-content: space-between;
         user-select: none;
         cursor: grab;
-        
+
         &::-webkit-scrollbar {
             display: none;
         }

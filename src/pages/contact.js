@@ -1,54 +1,59 @@
 import { Header } from '../components/header.js';
 import { Footer } from '../components/footer.js';
 import { formContact } from '../components/form/formContact.js';
+import { Component } from '../componennts/Component.js';
 
-export const Contact = {
-    type: 'div',
-    children: [
-        Header,
-        {
-            type: 'main',
-            props: {
-                class: 'contact-main',
-            },
+export class Contact extends Component {
+    render() {
+        return {
+            type: 'div',
             children: [
+                Header,
                 {
-                    type: 'div',
+                    type: 'main',
                     props: {
-                        class: 'contact-header',
+                        class: 'contact-main',
                     },
                     children: [
                         {
-                            type: 'img',
+                            type: 'div',
                             props: {
-                                src: '../../assets/images/mascotte-contact.png',
-                                alt: 'Mascotte JO 2024',
-                                class: 'mascotte-contact',
-                            },
-                        },
-                        {
-                            type: 'h1',
-                            props: {
-                                class: 'contact-title',
+                                class: 'contact-header',
                             },
                             children: [
                                 {
-                                    type: 'TEXT_NODE',
-                                    content: 'Contact',
+                                    type: 'img',
+                                    props: {
+                                        src: '../../assets/images/mascotte-contact.png',
+                                        alt: 'Mascotte JO 2024',
+                                        class: 'mascotte-contact',
+                                    },
+                                },
+                                {
+                                    type: 'h1',
+                                    props: {
+                                        class: 'contact-title',
+                                    },
+                                    children: [
+                                        {
+                                            type: 'TEXT_NODE',
+                                            content: 'Contact',
+                                        },
+                                    ],
                                 },
                             ],
                         },
+                        {
+                            type: 'section',
+                            props: {
+                                class: 'contact-info',
+                            },
+                            children: [formContact],
+                        },
                     ],
                 },
-                {
-                    type: 'section',
-                    props: {
-                        class: 'contact-info',
-                    },
-                    children: [formContact],
-                },
+                Footer,
             ],
-        },
-        Footer,
-    ],
-};
+        };
+    }
+}

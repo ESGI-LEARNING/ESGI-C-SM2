@@ -1,4 +1,4 @@
-import { Component } from '../componennts/Component.js'
+import { Component } from '../componennts/Component.js';
 import { Header } from '../components/header.js';
 import { Footer } from '../components/footer.js';
 import { HeroHome } from '../components/home/heroHome.js';
@@ -10,36 +10,13 @@ export class Home extends Component {
         return {
             type: 'div',
             children: [
+                Header,
                 {
-                    type: 'h1',
-                    children: [
-                        {
-                            type: 'TEXT_NODE',
-                            content: 'Home Page',
-                        },
-                    ],
+                    type: 'main',
+                    children: [HeroHome, evenementList, mapHome],
                 },
-                {
-                    type: 'p',
-                    children: [
-                        {
-                            type: 'TEXT_NODE',
-                            content: 'Welcome to the Home Page',
-                        },
-                    ],
-                },
+                Footer,
             ],
-        }
+        };
     }
 }
-export const Home = {
-    type: 'div',
-    children: [
-        Header,
-        {
-            type: 'main',
-            children: [HeroHome, evenementList, mapHome],
-        },
-        Footer,
-    ],
-};

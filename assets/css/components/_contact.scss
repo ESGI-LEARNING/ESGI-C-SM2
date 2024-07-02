@@ -4,20 +4,19 @@
     align-items: center;
     justify-content: center;
 
-
     .contact-header {
         display: flex;
         align-items: center;
-        justify-content: center; 
+        justify-content: center;
 
         .mascotte-contact {
             height: 15rem;
             width: auto;
-            margin-right: 4rem; 
+            margin-right: 4rem;
         }
 
         .contact-title {
-            font-family: "Olympic Headline";
+            font-family: 'Olympic Headline';
             font-size: 64px;
             font-style: normal;
             font-weight: 700;
@@ -28,7 +27,7 @@
     }
 
     .contact-info {
-        margin-top: 5rem; 
+        margin-top: 5rem;
     }
 }
 
@@ -54,10 +53,10 @@
         }
 
         .form-group {
-          width: 100%;
+            width: 100%;
 
             label {
-                font-family: "Olympic Sans";
+                font-family: 'Olympic Sans';
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
@@ -70,7 +69,7 @@
                 width: 100%;
                 padding: 1rem;
                 border-radius: 5px;
-                font-family: "Olympic Sans";
+                font-family: 'Olympic Sans';
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 400;
@@ -85,7 +84,7 @@
                 padding: 1rem;
                 border: 1px solid rgba(132, 132, 132, 1);
                 border-radius: 5px;
-                font-family: "Olympic Sans";
+                font-family: 'Olympic Sans';
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 400;

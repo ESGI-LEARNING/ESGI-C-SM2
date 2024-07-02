@@ -1,7 +1,7 @@
 const JoDOMRouter = {
-    render: function(rootElement, routes) {
-        const pathname = window.location.pathname
-        const route = routes.find(route => route.path === pathname)
+    render: function (rootElement, routes) {
+        const pathname = window.location.pathname;
+        const route = routes.find((route) => route.path === pathname);
 
         if (route) {
             const Component = route.component;
@@ -11,7 +11,10 @@ const JoDOMRouter = {
 
             if (JoDOMRouter.currentDomElement) {
                 // Mettez à jour l'arborescence du DOM existante
-                JoDOMRouter.updateStructure(JoDOMRouter.currentDomElement, structure);
+                JoDOMRouter.updateStructure(
+                    JoDOMRouter.currentDomElement,
+                    structure,
+                );
             } else {
                 // Rendez la structure pour la première fois
                 const domElement = JoDOMRouter.renderStructure(structure);
@@ -23,21 +26,27 @@ const JoDOMRouter = {
         }
     },
 
-    updateStructure: function(domNode, newStructure) {
+    updateStructure: function (domNode, newStructure) {
         // Si les types ne correspondent pas, remplacez le noeud entier
-        if (domNode.nodeName !== newStructure.type && domNode.nodeType !== Node.TEXT_NODE) {
+        if (
+            domNode.nodeName !== newStructure.type &&
+            domNode.nodeType !== Node.TEXT_NODE
+        ) {
             const newDomNode = JoDOMRouter.renderStructure(newStructure);
             domNode.parentNode.replaceChild(newDomNode, domNode);
             return;
         }
 
         if (newStructure.props) {
-            Object.keys(newStructure.props).forEach(propName => {
+            Object.keys(newStructure.props).forEach((propName) => {
                 const propValue = newStructure.props[propName];
                 // Mettez à jour la propriété seulement si elle a changé
                 if (domNode[propName] !== propValue) {
                     if (propName.startsWith('on')) {
-                        domNode.addEventListener(propName.toLowerCase().substring(2), propValue);
+                        domNode.addEventListener(
+                            propName.toLowerCase().substring(2),
+                            propValue,
+                        );
                     } else if (propName === 'style') {
                         Object.assign(domNode.style, propValue);
                     } else {
@@ -52,36 +61,44 @@ const JoDOMRouter = {
                 domNode.removeChild(domNode.lastChild);
             }
             while (domNode.childNodes.length < newStructure.children.length) {
-                const newChild = JoDOMRouter.renderStructure(newStructure.children[domNode.childNodes.length]);
+                const newChild = JoDOMRouter.renderStructure(
+                    newStructure.children[domNode.childNodes.length],
+                );
                 domNode.appendChild(newChild);
             }
             for (let i = 0; i < domNode.childNodes.length; i++) {
-                JoDOMRouter.updateStructure(domNode.childNodes[i], newStructure.children[i]);
+                JoDOMRouter.updateStructure(
+                    domNode.childNodes[i],
+                    newStructure.children[i],
+                );
             }
         }
     },
 
-    renderStructure: function(structure) {
+    renderStructure: function (structure) {
         if (structure.type === 'TEXT_NODE') {
-            return document.createTextNode(structure.content)
+            return document.createTextNode(structure.content);
         }
 
-        const domElement = document.createElement(structure.type)
+        const domElement = document.createElement(structure.type);
 
         if (structure.props) {
-            Object.keys(structure.props).forEach(propName => {
-                const propValue = structure.props[propName]
+            Object.keys(structure.props).forEach((propName) => {
+                const propValue = structure.props[propName];
 
                 if (propName.startsWith('on')) {
-                    domElement.addEventListener(propName.toLowerCase().substring(2), propValue)
+                    domElement.addEventListener(
+                        propName.toLowerCase().substring(2),
+                        propValue,
+                    );
                 } else if (propName === 'style') {
-                    Object.assign(domElement.style, propValue)
+                    Object.assign(domElement.style, propValue);
                 } else {
-                    domElement.setAttribute(propName, propValue)
+                    domElement.setAttribute(propName, propValue);
                 }
-            })
+            });
         }
-
+        /*
         if (structure.events) {
             for (const eventName in structure.events) {
                 if (eventName === 'mounted') {
@@ -97,6 +114,7 @@ const JoDOMRouter = {
                 }
             }
         }
+         */
 
         if (structure.loop) {
             const container = document.createElement('ul');
@@ -110,18 +128,18 @@ const JoDOMRouter = {
                 });
                 container.appendChild(loopElement);
             }
-            return container;
+            domElement.appendChild(container);
         }
 
         if (structure.children) {
-            structure.children.forEach(child => {
-                const childNode = JoDOMRouter.renderStructure(child)
-                domElement.appendChild(childNode)
-            })
+            structure.children.forEach((child) => {
+                const childNode = JoDOMRouter.renderStructure(child);
+                domElement.appendChild(childNode);
+            });
         }
 
-        return domElement
+        return domElement;
     },
-}
+};
 
-export default JoDOMRouter
+export default JoDOMRouter;
