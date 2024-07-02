@@ -842,6 +842,15 @@ header nav ul li a {
   margin-bottom: 4rem;
 }
 
+.amuse-section .amuse-title1 {
+  display: none;
+}
+
+.amuse-section .amuse-title2 {
+  display: flex;
+  justify-content: center;
+}
+
 .amuse-section p {
   color: var(--black);
   font-family: "Olympic Sans", sans-serif;
@@ -886,6 +895,21 @@ header nav ul li a {
   .amuse-section h2 {
     font-size: 4.8rem;
     margin-bottom: 2rem;
+    margin: 0 auto;
+  }
+
+  .amuse-section .amuse-title2 {
+    display: none;
+  }
+
+  .amuse-section .amuse-title1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .amuse-section img {
+    order: 2;
+    margin: 2rem 0;
   }
 
   .amuse-section p {
