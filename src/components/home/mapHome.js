@@ -7,6 +7,18 @@ export const mapHome = {
     },
     children: [
         {
+            type: 'h2',
+            props: {
+                class: 'amuse-title1'
+            },
+            children: [
+                {
+                    type: 'TEXT_NODE',
+                    content: 'AMUSE DE TOI',
+                },
+            ],
+        },
+        {
             type: 'div',
             children: [
                 {
@@ -26,6 +38,9 @@ export const mapHome = {
             children: [
                 {
                     type: 'h2',
+                    props: {
+                        class: 'amuse-title2'
+                    },
                     children: [
                         {
                             type: 'TEXT_NODE',

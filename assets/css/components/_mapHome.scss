@@ -12,6 +12,14 @@
         margin-bottom: 4rem;
     }
 
+  .amuse-title1{
+    display: none;
+  }
+  .amuse-title2{
+    display: flex;
+    justify-content: center;
+  }
+
   p {
     color: var(--black);
     font-family: "Olympic Sans", sans-serif;
@@ -57,14 +65,29 @@
 
 @media screen and (max-width: 768px) {
   .amuse-section {
+
     h2 {
       font-size: 4.8rem;
       margin-bottom: 2rem;
+      margin: 0 auto;
+    } 
+
+    .amuse-title2{
+      display: none;
+    }
+    .amuse-title1{
+      display: flex;
+      justify-content: center;
     }
 
+    img{
+      order: 2;
+      margin: 2rem 0;
+    }
     p {
       font-size: 1.6rem;
       margin-bottom: 2rem;
     }
+    
   }
 }
