@@ -34,3 +34,20 @@ header {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 2rem 5rem;
+
+        img {
+            max-width: 6rem;
+        }
+
+        nav {
+            ul {
+                gap: 1.5rem;
+            }
+        }
+    }
+    
+}
