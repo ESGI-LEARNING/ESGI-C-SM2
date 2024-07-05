@@ -2,7 +2,7 @@ import { Header } from '../../components/header.js';
 import { Footer } from '../../components/footer.js';
 import { Leaflet } from '../../components/leaflet/leaflet.js';
 import { FormFilter } from '../../components/form/formFilter.js';
-import { Component } from '../../componennts/Component.js';
+import { Component } from '../../components/Component.js';
 
 export class EventDetails extends Component {
     render() {

@@ -2,7 +2,7 @@ import { Header } from '../../components/header.js';
 import { Footer } from '../../components/footer.js';
 import { FormFilter } from '../../components/form/formFilter.js';
 import { Cards } from '../../components/section/cards.js';
-import { Component } from '../../componennts/Component.js';
+import { Component } from '../../components/Component.js';
 
 export class Events extends Component {
     render() {

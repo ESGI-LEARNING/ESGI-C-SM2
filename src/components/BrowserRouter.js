@@ -1,15 +1,29 @@
 const BrowserRouter = function (routes, rootElement) {
     const generatePage = () => {
-        const path = location.pathname;
-        const structure = routes[path] ?? routes['*'];
+        const pathname = window.location.pathname
+        const route = routes.find(route => route.path === pathname)
 
-        if (rootElement.childNodes.length) {
-            rootElement.replaceChild(
-                this.renderStructure(structure),
-                rootElement.childNodes[0],
-            );
-        } else rootElement.appendChild(this.renderStructure(structure));
+        if (route) {
+            const Component = route.component;
+            const props = route.props || {};
+            const componentInstance = new Component(props);
+            const structure = componentInstance.render();
+
+            if (rootElement.childNodes.length) {
+                rootElement.replaceChild(
+                    this.renderStructure(structure),
+                    rootElement.childNodes[0],
+                );
+            } else {
+                console.log('coucou je suis en modification')
+                rootElement.appendChild(this.renderStructure(structure));
+            }
+        } else {
+            console.error(`Pas de route pour la route "${pathname}"`);
+        }
     };
+
+
 
     generatePage();
 

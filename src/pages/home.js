@@ -1,4 +1,4 @@
-import { Component } from '../componennts/Component.js';
+import { Component } from '../components/Component.js';
 import { Header } from '../components/header.js';
 import { Footer } from '../components/footer.js';
 import { HeroHome } from '../components/home/heroHome.js';

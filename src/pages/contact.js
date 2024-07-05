@@ -1,7 +1,7 @@
 import { Header } from '../components/header.js';
 import { Footer } from '../components/footer.js';
 import { formContact } from '../components/form/formContact.js';
-import { Component } from '../componennts/Component.js';
+import { Component } from '../components/Component.js';
 
 export class Contact extends Component {
     render() {

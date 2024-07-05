@@ -3,6 +3,7 @@ export class Component {
         this.state = {};
         this.props = {};
     }
+
     setState(newState) {
         this.state = { ...this.state, ...newState };
         renderComponent(this);
