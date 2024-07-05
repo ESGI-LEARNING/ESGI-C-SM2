@@ -1356,7 +1356,7 @@ header nav ul li a {
   position: relative;
 }
 
-.content {
+.content-show {
   margin: 2rem;
   padding: 2rem;
   border-radius: 8px;
@@ -1365,29 +1365,29 @@ header nav ul li a {
   justify-content: space-between;
 }
 
-.content h2 {
+.content-show h2 {
   font-size: 6.4rem;
   font-weight: bold;
   font-family: "Olympic Headline", sans-serif;
 }
 
-.content p {
+.content-show p {
   font-size: 16px;
   color: #333;
   max-width: 70rem;
 }
 
-.content div {
+.content-show div {
   display: flex;
   flex-direction: column;
 }
 
-.content div time {
+.content-show div time {
   font-size: 12px;
   font-style: italic;
 }
 
-.content div .pill {
+.content-show div .pill {
   background: var(--blue, #0078d0);
   color: #fff;
   padding: 0.5rem 2rem;
