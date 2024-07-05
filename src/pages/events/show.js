@@ -15,7 +15,7 @@ export class EventDetails extends Component {
                         {
                             type: 'div',
                             props: {
-                                class: 'content',
+                                class: 'content-show',
                             },
                             children: [
                                 {
