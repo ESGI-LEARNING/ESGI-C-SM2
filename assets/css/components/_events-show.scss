@@ -1,0 +1,45 @@
+
+
+
+// Container for the content
+.content {
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 140rem;
+
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-size: 6.4rem;
+    font-weight: bold;
+    font-family: 'Olympic Headline', sans-serif;
+  }
+
+  p {
+    font-size: 16px;
+    color: #333;
+    max-width: 70rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column; 
+
+    time {
+    font-size: 12px;
+    font-style: italic;
+    }
+
+    .pill {
+        background: var(--blue, #0078d0);
+        color: #fff;
+        padding: 0.5rem 2rem;
+        border-radius: 999px;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+  }
+}
+
