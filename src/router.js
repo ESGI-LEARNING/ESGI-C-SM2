@@ -18,7 +18,7 @@ export const routes = [
         component: Events,
     },
     {
-        path: '/events/:id',
+        path: '/show',
         component: EventDetails,
     },
     {
