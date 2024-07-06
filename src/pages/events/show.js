@@ -36,6 +36,9 @@ export class EventDetails extends JoDOM.Component {
                 Header,
                 {
                     type: 'main',
+                    props: {
+                        class: 'main-show',
+                    },
                     children: [
                         JoDOM.createElement(Text, { type: 'h1', content: event.title }),
                         {
