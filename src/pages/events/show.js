@@ -11,6 +11,9 @@ export class EventDetails extends Component {
                 Header,
                 {
                     type: 'main',
+                    props: {
+                        class: 'main-show',
+                    },
                     children: [
                         {
                             type: 'div',
@@ -26,7 +29,8 @@ export class EventDetails extends Component {
                                             children: [
                                                 {
                                                     type: 'TEXT_NODE',
-                                                    content: 'Arena paris sud 6',
+                                                    content:
+                                                        'Arena paris sud 6',
                                                 },
                                             ],
                                         },
@@ -36,7 +40,7 @@ export class EventDetails extends Component {
                                                 {
                                                     type: 'TEXT_NODE',
                                                     content:
-                                                        'Le football, littéralement "le jeu de ballon au pied", est un sport d\'origine britannique codifié au XIXe siècle et devenu le plus populaire au monde. Plus qu\'un simple jeu, il prône des valeurs de camaraderie, de respect et de persévérance. Le football est un sport complet alliant technique, endurance physique et stratégie mentale. Les joueurs doivent maîtriser diverses compétences tout en travaillant en équipe et en s\'adaptant aux tactiques adverses',
+                                                        "Le football, littéralement \"le jeu de ballon au pied\", est un sport d'origine britannique codifié au XIXe siècle et devenu le plus populaire au monde. Plus qu'un simple jeu, il prône des valeurs de camaraderie, de respect et de persévérance. Le football est un sport complet alliant technique, endurance physique et stratégie mentale. Les joueurs doivent maîtriser diverses compétences tout en travaillant en équipe et en s'adaptant aux tactiques adverses",
                                                 },
                                             ],
                                         },
