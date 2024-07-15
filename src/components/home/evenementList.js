@@ -1,35 +1,102 @@
 import { Cards } from '../section/cards.js';
 import './../../../assets/js/components/carousel.js';
+import { Component } from '../Component.js'
 
-export const evenementList = {
-    type: 'section',
-    props: {
-        class: 'evenement-container',
-    },
-    children: [
+export default class EvenementList extends Component {
+    constructor() {
+        super()
+
+        this.state = {
+            evenements: [],
+        }
+    }
+
+    componentDidMount() {
+        this.setState({
+            evenements: [
         {
-            type: 'h2',
-            children: [
-                {
-                    type: 'TEXT_NODE',
-                    content: 'EVENEMENT',
+                    title: 'Evenement 1',
+                    description: 'Description de l\'evenement 1',
+                    image: 'https://via.placeholder.com/150',
                 },
-            ],
-        },
-        {
-            type: 'div',
+                {
+                    title: 'Evenement 2',
+                    description: 'Description de l\'evenement 2',
+                    image: 'https://via.placeholder.com/150',
+                },
+                {
+                    title: 'Evenement 3',
+                    description: 'Description de l\'evenement 3',
+                    image: 'https://via.placeholder.com/150',
+                },
+                {
+                    title: 'Evenement 4',
+                    description: 'Description de l\'evenement 4',
+                    image: 'https://via.placeholder.com/150',
+                },
+                {
+                    title: 'Evenement 5',
+                    description: 'Description de l\'evenement 5',
+                    image: 'https://via.placeholder.com/150',
+                },
+            ]
+        });
+
+        console.log(this.state)
+    }
+
+
+
+    render() {
+        return {
+            type: 'section',
             props: {
-                class: 'carousel-container',
+                class: 'evenement-container',
             },
             children: [
                 {
-                    type: 'ul',
+                    type: 'h2',
+                    children: [
+                        {
+                            type: 'TEXT_NODE',
+                            content: 'EVENEMENT',
+                            events: {
+                                click: [
+                                    function (event) {
+                                        event.preventDefault();
+                                        // slice in state
+                                        this.setState({
+                                            evenements: this.state.evenements.slice(0, 3)
+                                        });
+                                    },
+                                ],
+                            }
+                        },
+                    ],
+                },
+                {
+                    type: 'div',
                     props: {
-                        class: 'carousel-row',
+                        class: 'carousel-container',
                     },
-                    children: [Cards, Cards, Cards, Cards, Cards, Cards],
+                    children: [
+                        {
+                            type: 'ul',
+                            props: {
+                                class: 'carousel-row',
+                            },
+                            children: this.state.evenements.map((evenement, index) => (
+                                new Cards({
+                                    title: evenement.title,
+                                    url: `/events/${index}`,
+                                    description: evenement.description,
+                                    image: evenement.image,
+                                }).render()
+                            )),
+                        },
+                    ],
                 },
             ],
-        },
-    ],
-};
+        }
+    }
+}

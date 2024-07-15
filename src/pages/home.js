@@ -2,7 +2,7 @@ import { Component } from '../components/Component.js';
 import { Header } from '../components/header.js';
 import { Footer } from '../components/footer.js';
 import { HeroHome } from '../components/home/heroHome.js';
-import { evenementList } from '../components/home/evenementList.js';
+import EvenementList from '../components/home/evenementList.js'
 import { mapHome } from '../components/home/mapHome.js';
 
 export class Home extends Component {
@@ -13,7 +13,7 @@ export class Home extends Component {
                 Header,
                 {
                     type: 'main',
-                    children: [HeroHome, evenementList, mapHome],
+                    children: [HeroHome, EvenementList, mapHome],
                 },
                 Footer,
             ],

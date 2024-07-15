@@ -7,6 +7,7 @@ const JoDOMRouter = {
 
     renderStructure: function generateDom(structure) {
         let element;
+        let componentObserver;
 
         if (typeof structure.type === "string") {
             if (structure.type === "TEXT_NODE") {
@@ -14,6 +15,24 @@ const JoDOMRouter = {
             }
 
             element = document.createElement(structure.type);
+        } else {
+            const props = structure.props || {};
+            const state = structure.state || {};
+
+            const componentInstance = new structure(props, state);
+            componentInstance.componentDidMount();
+
+            componentObserver = {
+                update: function(component) {
+                    const newElement = JoDOMRouter.renderStructure(component.render());
+                    element.replaceWith(newElement);
+                    element = newElement;
+                }
+            };
+
+            componentInstance.subscribe(componentObserver);
+
+            element = this.renderStructure(componentInstance.render());
         }
 
         if (structure.props) {

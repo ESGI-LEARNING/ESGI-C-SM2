@@ -15,15 +15,12 @@ const BrowserRouter = function (routes, rootElement) {
                     rootElement.childNodes[0],
                 );
             } else {
-                console.log('coucou je suis en modification')
                 rootElement.appendChild(this.renderStructure(structure));
             }
         } else {
             console.error(`Pas de route pour la route "${pathname}"`);
         }
     };
-
-
 
     generatePage();
 
