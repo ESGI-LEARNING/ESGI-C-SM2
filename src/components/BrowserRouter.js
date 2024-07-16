@@ -14,10 +14,8 @@ const BrowserRouter = function (routes, rootElement) {
                 const page = JoDOM.createElement(component);
                 g = renderStructure(page);
             } else if (typeof route.component === "function") {
-                console.log(route)
                 g = new route.component();
             } else {
-                console.log('coucou 1')
                 g = renderStructure(route.component);
             }
 

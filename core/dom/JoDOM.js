@@ -6,5 +6,4 @@ const JoDOM = {
     Component: Component,
 }
 
-
 export default JoDOM;

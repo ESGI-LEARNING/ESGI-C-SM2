@@ -34,10 +34,10 @@ export function renderStructure(structure) {
     }
 
 
-    if (structure.instance && structure.instance.attachRootElement) {
-        structure.instance.attachRootElement(element);
+    if (structure.instance && structure.instance.setRootElement) {
+        structure.instance.setRootElement(element);
 
-        if (structure.instance.componentDidMount) {
+        if (structure.instance.isRender && structure.instance.componentDidMount) {
             structure.instance.componentDidMount();
         }
     }

@@ -12,21 +12,29 @@ export default class Component {
     }
 
     update() {
+        this.isRender = false;
         const oldElement = renderStructure(this.render());
         const currentElement = this.__rootElement;
         const parent = currentElement.parentElement;
 
-        if (parent && currentElement) this.componentWillUpdate();
-        parent.replaceChild(oldElement, currentElement);
+        if (parent && currentElement) {
+            if (this.componentWillUnmount) {
+                this.componentWillUnmount();
+            }
 
-        if (this.componentDidUpdate) {
-            this.componentDidUpdate();
+            parent.replaceChild(oldElement, currentElement);
+
+            if (this.componentDidUpdate) {
+                this.componentDidUpdate();
+            }
+
+            this.__rootElement = oldElement;
         }
-
-        this.__rootElement = oldElement;
     }
 
-
+    setRootElement(element) {
+        this.__rootElement = element;
+    }
 
     render() {
         return null;

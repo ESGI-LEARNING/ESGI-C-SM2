@@ -5,6 +5,7 @@ export function createElement(component, props, ...children) {
         const instance = new component(props);
         component = instance.render();
         component.instance = instance;
+        instance.isRender = true
     } else if (typeof component === "function") {
         return component(props);
     }
