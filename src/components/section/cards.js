@@ -1,6 +1,6 @@
-import { Component } from '../Component.js'
+import JoDOM from '../../../core/dom/JoDOM.js'
 
-export class Cards extends Component {
+export class Cards extends JoDOM.Component {
     constructor(props) {
          super(props)
     }

@@ -1,8 +1,7 @@
-import { Cards } from '../section/cards.js';
 import './../../../assets/js/components/carousel.js';
-import { Component } from '../Component.js'
+import JoDOM from '../../../core/dom/JoDOM.js'
 
-export default class EvenementList extends Component {
+export default class EvenementList extends JoDOM.Component {
     constructor() {
         super()
 
@@ -71,28 +70,6 @@ export default class EvenementList extends Component {
                                     },
                                 ],
                             }
-                        },
-                    ],
-                },
-                {
-                    type: 'div',
-                    props: {
-                        class: 'carousel-container',
-                    },
-                    children: [
-                        {
-                            type: 'ul',
-                            props: {
-                                class: 'carousel-row',
-                            },
-                            children: this.state.evenements.map((evenement, index) => (
-                                new Cards({
-                                    title: evenement.title,
-                                    url: `/events/${index}`,
-                                    description: evenement.description,
-                                    image: evenement.image,
-                                }).render()
-                            )),
                         },
                     ],
                 },

@@ -2,9 +2,13 @@ import { Header } from '../../components/header.js';
 import { Footer } from '../../components/footer.js';
 import { Leaflet } from '../../components/leaflet/leaflet.js';
 import { FormFilter } from '../../components/form/formFilter.js';
-import { Component } from '../../components/Component.js';
+import JoDOM from '../../../core/dom/JoDOM.js'
 
-export class EventDetails extends Component {
+export class EventDetails extends JoDOM.Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return {
             type: 'div',

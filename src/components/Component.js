@@ -1,30 +1,32 @@
-export class Component {
-    constructor() {
-        this.state = {};
-        this.props = {};
-        this.observers = [];
-    }
+import { renderStructure } from '../../core/dom/renderStructure.js'
 
-    componentDidMount() {
-        return null;
+export default class Component {
+    constructor(props = {}) {
+        this.state = {};
+        this.props = props;
     }
 
     setState(newState) {
-        this.state = newState;
-        this.notifyObservers();
+        this.state = { ...this.state, ...newState };
+        this.update()
     }
 
-    subscribe(observer) {
-        this.observers.push(observer);
+    update() {
+        const oldElement = renderStructure(this.render());
+        const currentElement = this.__rootElement;
+        const parent = currentElement.parentElement;
+
+        if (parent && currentElement) this.componentWillUpdate();
+        parent.replaceChild(oldElement, currentElement);
+
+        if (this.componentDidUpdate) {
+            this.componentDidUpdate();
+        }
+
+        this.__rootElement = oldElement;
     }
 
-    unsubscribe(observer) {
-        this.observers = this.observers.filter(obs => obs !== observer);
-    }
 
-    notifyObservers() {
-        this.observers.forEach(observer => observer.update(this));
-    }
 
     render() {
         return null;

@@ -1,21 +1,30 @@
+import { renderStructure } from '../../core/dom/renderStructure.js'
+import JoDOM from '../../core/dom/JoDOM.js'
+import isClassComponent from '../../core/utils/type.js'
+
 const BrowserRouter = function (routes, rootElement) {
     const generatePage = () => {
+        let g;
         const pathname = window.location.pathname
         const route = routes.find(route => route.path === pathname)
 
         if (route) {
-            const Component = route.component;
-            const props = route.props || {};
-            const componentInstance = new Component(props);
-            const structure = componentInstance.render();
+            if(isClassComponent(route.component)) {
+                const component = route.component;
+                const page = JoDOM.createElement(component);
+                g = renderStructure(page);
+            } else if (typeof route.component === "function") {
+                console.log(route)
+                g = new route.component();
+            } else {
+                console.log('coucou 1')
+                g = renderStructure(route.component);
+            }
 
             if (rootElement.childNodes.length) {
-                rootElement.replaceChild(
-                    this.renderStructure(structure),
-                    rootElement.childNodes[0],
-                );
+                rootElement.replaceChild(g, rootElement.childNodes[0]);
             } else {
-                rootElement.appendChild(this.renderStructure(structure));
+                rootElement.appendChild(g);
             }
         } else {
             console.error(`Pas de route pour la route "${pathname}"`);
