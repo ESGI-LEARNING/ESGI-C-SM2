@@ -13,7 +13,6 @@ export const addMarkers = (map, data) => {
                 .bindPopup(
                     `<b>${nom_site}</b><br>${sports}<br>${start_date} - ${end_date}`,
                 )
-                .openPopup();
         },
     );
 };
