@@ -3,6 +3,7 @@ import { Footer } from '../../components/footer.js';
 import { Leaflet } from '../../components/leaflet/leaflet.js';
 import { FormFilter } from '../../components/form/formFilter.js';
 import JoDOM from '../../../core/dom/JoDOM.js'
+import Text from '../../components/section/text.js';
 
 export class EventDetails extends JoDOM.Component {
     constructor(props) {
@@ -17,16 +18,7 @@ export class EventDetails extends JoDOM.Component {
                 {
                     type: 'main',
                     children: [
-                        FormFilter,
-                        {
-                            type: 'h1',
-                            children: [
-                                {
-                                    type: 'TEXT_NODE',
-                                    content: 'Event',
-                                },
-                            ],
-                        },
+                        JoDOM.createElement(Text, { type: 'h1', content: 'Event' }),
                         {
                             type: 'div',
                             props: {
@@ -34,6 +26,7 @@ export class EventDetails extends JoDOM.Component {
                             },
                             children: [],
                         },
+
                     ],
                 },
                 Footer,
