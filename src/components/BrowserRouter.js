@@ -1,6 +1,7 @@
 import { renderStructure } from '../../core/dom/renderStructure.js'
 import JoDOM from '../../core/dom/JoDOM.js'
 import isClassComponent from '../../core/utils/type.js'
+import NotFound from '../pages/404.js'
 
 const BrowserRouter = function (routes, rootElement) {
     const matchRoute = (pathname) => {
@@ -56,6 +57,9 @@ const BrowserRouter = function (routes, rootElement) {
             }
         } else {
             console.error(`Pas de route pour la route "${pathname}"`);
+            const page = JoDOM.createElement(NotFound);
+            const g = renderStructure(page);
+            rootElement.appendChild(g);
         }
     };
 
