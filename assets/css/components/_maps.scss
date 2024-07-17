@@ -3,9 +3,17 @@
 #map {
     height: 80vh;
     width: 100%;
-    margin: 3rem auto;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     position: relative;
+}
+
+.map-container {
+    margin: 3rem auto;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: clip;
 }

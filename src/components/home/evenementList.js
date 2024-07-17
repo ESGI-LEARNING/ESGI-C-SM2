@@ -1,19 +1,32 @@
 import './../../../assets/js/components/carousel.js';
 import JoDOM from '../../../core/dom/JoDOM.js'
+import Cards from '../section/cards.js';
+import { fetchData } from '../api/fetchData.js';
+import './../../../assets/js/components/carousel.js';
 
 export default class EvenementList extends JoDOM.Component {
     constructor() {
-        super()
-
+        super();
         this.state = {
-            evenements: [],
-        }
+            events: [],
+        };
     }
 
     componentDidMount() {
+        fetch(
+            'https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?order_by=start_date&limit=61&offset=0&exclude=category_id%3Avenue-paralympic&lang=fr&timezone=Europe%2FParis&include_links=false&include_app_metas=true',
+            {
+                method: 'GET',
+            })
+            .then(response => response.json())
+            .then(data => this.setState({ events: data.results }));
+    }
+
+    /*
+    componentDidMount() {
         this.setState({
             evenements: [
-        {
+                {
                     title: 'Evenement 1',
                     description: 'Description de l\'evenement 1',
                     image: 'https://via.placeholder.com/150',
@@ -39,14 +52,12 @@ export default class EvenementList extends JoDOM.Component {
                     image: 'https://via.placeholder.com/150',
                 },
             ]
-        });
-
-        console.log(this.state)
+        })
     }
-
-
+        */
 
     render() {
+        const { events } = this.state;
         return {
             type: 'section',
             props: {
@@ -59,21 +70,27 @@ export default class EvenementList extends JoDOM.Component {
                         {
                             type: 'TEXT_NODE',
                             content: 'EVENEMENT',
-                            events: {
-                                click: [
-                                    function (event) {
-                                        event.preventDefault();
-                                        // slice in state
-                                        this.setState({
-                                            evenements: this.state.evenements.slice(0, 3)
-                                        });
-                                    },
-                                ],
-                            }
+                        },
+                    ],
+                },
+                {
+                    type: 'section',
+                    props: {
+                        class: 'carousel-container',
+                    },
+                    children: [
+                        {
+                            type: 'ul',
+                            props: {
+                                class: 'carousel-row',
+                            },
+                            children: events.slice(0, 5).map((event, index) =>
+                                JoDOM.createElement(Cards, { key: index, ...event })
+                            )
                         },
                     ],
                 },
             ],
-        }
+        };
     }
 }
