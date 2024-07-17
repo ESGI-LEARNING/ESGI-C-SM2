@@ -1,11 +1,12 @@
 import { initMap } from './leafletConfig.js';
-import { fetchData } from '../api/fetchData.js';
-import { addMarkers } from './addMarkers.js';
+import { addEventMarker, addSpotMarkers } from './addMarkers.js';
 
-export const Leaflet = async function Leaflet() {
-    if (document.getElementById('map')) {
+export const Leaflet = async function Leaflet(event) {
+    if (document.getElementById('map') && event) {
         const map = initMap();
-        const data = await fetchData();
-        addMarkers(map, data);
+        if (event.spots) {
+            addSpotMarkers(map, event.spots);
+            addEventMarker(map, event);
+        }
     }
 };
