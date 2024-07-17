@@ -1,0 +1,51 @@
+.container-not-found {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    .title {
+        color: #000;
+        font-family: "Olympic Headline";
+        font-size: 12.8rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 7.5rem;
+        position: relative;
+
+        @media screen and (max-width: 768px) {
+            font-size: 6.4rem;
+        }
+
+        &::before {
+            content: url('../images/sustainable-games 1.png');
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: -50%;
+            left: -75%;
+            transform: translate(-50%, -75%);
+
+            @media screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    .subtitle {
+        color: #000;
+        font-family: "Olympic Headline";
+        font-size: 6.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 7.5rem;
+
+        @media screen and (max-width: 768px) {
+            font-size: 3.2rem;
+        }
+    }
+}
