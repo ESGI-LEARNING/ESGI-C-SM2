@@ -3,18 +3,48 @@ import JoDOM from '../../core/dom/JoDOM.js'
 import isClassComponent from '../../core/utils/type.js'
 
 const BrowserRouter = function (routes, rootElement) {
+    const matchRoute = (pathname) => {
+        return routes.find(route => {
+            const routeParts = route.path.split('/');
+            const pathParts = pathname.split('/');
+
+            if (routeParts.length !== pathParts.length) return false;
+
+            return routeParts.every((part, index) => {
+                return part.startsWith(':') || part === pathParts[index];
+            });
+        });
+    };
+
+    const getParams = (route, pathname) => {
+        const routeParts = route.path.split('/');
+        const pathParts = pathname.split('/');
+        const params = {};
+
+        routeParts.forEach((part, index) => {
+            if (part.startsWith(':')) {
+                const paramName = part.slice(1);
+                params[paramName] = pathParts[index];
+            }
+        });
+
+        return params;
+    };
+
     const generatePage = () => {
-        let g;
-        const pathname = window.location.pathname
-        const route = routes.find(route => route.path === pathname)
+        const pathname = window.location.pathname;
+        const route = matchRoute(pathname);
 
         if (route) {
-            if(isClassComponent(route.component)) {
-                const component = route.component;
-                const page = JoDOM.createElement(component);
+            const params = getParams(route, pathname);
+            let g;
+
+            if (isClassComponent(route.component)) {
+                const Component = route.component;
+                const page = JoDOM.createElement(Component, params);
                 g = renderStructure(page);
             } else if (typeof route.component === "function") {
-                g = new route.component();
+                g = new route.component(params);
             } else {
                 g = renderStructure(route.component);
             }

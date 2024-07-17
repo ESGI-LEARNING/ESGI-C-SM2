@@ -27,9 +27,26 @@ export function renderStructure(structure) {
 
     if (structure.events) {
         for (const eventName in structure.events) {
-            for (const eventListeners of structure.events[eventName]) {
-                element.addEventListener(eventName, eventListeners);
+            if (eventName === 'mounted') {
+                setTimeout(() => {
+                    for (const callback of structure.events[eventName]) {
+                        callback(element);
+                    }
+                }, 0);
+            } else {
+                for (const eventListeners of structure.events[eventName]) {
+                    element.addEventListener(eventName, eventListeners);
+                }
             }
+        }
+    }
+
+    if (structure.loop) {
+        const container = document.createElement('ul')
+        element.appendChild(container)
+        for (let i = 0; i < structure.loop.count; i++) {
+            const child = renderStructure(structure.loop.template)
+            container.appendChild(child)
         }
     }
 
@@ -41,6 +58,7 @@ export function renderStructure(structure) {
             structure.instance.componentDidMount();
         }
     }
+
 
     return element;
 }
