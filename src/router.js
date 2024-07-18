@@ -17,7 +17,7 @@ export const routes = [
         component: Events,
     },
     {
-        path: '/events/map',
+        path: '/events/:id',
         component: EventDetails,
     },
 ];

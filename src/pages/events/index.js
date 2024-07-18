@@ -15,12 +15,12 @@ export class Events extends JoDOM.Component {
 
     componentDidMount() {
         fetch(
-            'https://data.paris2024.org/api/explore/v2.1/catalog/datasets/paris-2024-sites-de-competition/records?order_by=start_date&limit=61&offset=0&exclude=category_id%3Avenue-paralympic&lang=fr&timezone=Europe%2FParis&include_links=false&include_app_metas=true',
+            'https://api-esgi.faispaschier.fr/events/',
             {
                 method: 'GET',
             })
             .then(response => response.json())
-            .then(data => this.setState({ events: data.results }));
+            .then(data => this.setState({ events: data }));
     }
 
 

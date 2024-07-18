@@ -5,7 +5,7 @@ export default class Cards extends JoDOM.Component {
     }
 
     render() {
-        const { sports, nom_site } = this.props;
+        const { title, description, category, startDate, endDate, id } = this.props;
         return {
             type: 'li',
             props: {
@@ -15,13 +15,13 @@ export default class Cards extends JoDOM.Component {
                 {
                     type: 'a',
                     props: {
-                        href: '/events/map',
+                        href: `/events/${id}`,
                     },
                     events: {
                         click: [
                             function (event) {
                                 event.preventDefault();
-                                history.pushState(null, null, '/events/map');
+                                history.pushState(null, null, `/events/:${id}`);
                             },
                         ],
                     },
@@ -47,7 +47,7 @@ export default class Cards extends JoDOM.Component {
                                     children: [
                                         {
                                             type: 'TEXT_NODE',
-                                            content: sports,
+                                            content: category.name,
                                         },
                                     ],
                                 },
@@ -56,7 +56,7 @@ export default class Cards extends JoDOM.Component {
                                     children: [
                                         {
                                             type: 'TEXT_NODE',
-                                            content: nom_site,
+                                            content: title,
                                         },
                                     ],
                                 },
@@ -65,7 +65,7 @@ export default class Cards extends JoDOM.Component {
                                     children: [
                                         {
                                             type: 'TEXT_NODE',
-                                            content: this.state.description,
+                                            content: description,
                                         },
                                     ],
                                 },
@@ -74,7 +74,7 @@ export default class Cards extends JoDOM.Component {
                                     children: [
                                         {
                                             type: 'TEXT_NODE',
-                                            content: this.state.date,
+                                            content: new Date(startDate).toLocaleDateString(),
                                         },
                                     ],
                                 },
