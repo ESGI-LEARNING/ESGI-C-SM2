@@ -1,6 +1,6 @@
 import { Contact } from './pages/Contact.js';
-import { Events } from './pages/events/Index.js';
-import { EventDetails } from './pages/events/Show.js';
+import { Events } from './pages/events/index.js';
+import { EventDetails } from './pages/events/show.js';
 import Home from './pages/Home.js'
 
 export const routes = [
