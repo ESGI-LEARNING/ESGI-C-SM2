@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: tmeunier
+  name: esgi-app-jo
+spec:
+  type: ClusterIP
+  selector:
+    app: esgi-app-jo
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

@@ -1,0 +1,16 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: esgi-app-jo
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`esgi.theomeunier.fr`)
+      services:
+        - name: esgi-app-jo
+          port: 8080
+          namespace: tmeunier
+  tls:
+    certResolver: le

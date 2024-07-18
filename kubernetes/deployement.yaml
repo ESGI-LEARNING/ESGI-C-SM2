@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: esgi-app-jo
+  namespace: tmeunier
+  labels:
+    app: api-esgi-jo
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 50%
+  selector:
+    matchLabels:
+      app: esgi-app-jo
+  template:
+    metadata:
+      labels:
+        app: esgi-app-jo
+    spec:
+      imagePullSecrets:
+        - name: regcred-tmeunier
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app:
+              topologyKey: "kubernetes.io/zone"
+
+      containers:
+        - name: tmeunier-esgi-app-jo
+          image: https://registry.exemple.fr
