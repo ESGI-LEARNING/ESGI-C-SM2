@@ -12,8 +12,10 @@ const BrowserRouter = function (routes, rootElement) {
             if (routeParts.length !== pathParts.length) return false;
 
             return routeParts.every((part, index) => {
-                return part.startsWith(':') || part === pathParts[index];
-            });
+                if (part.startsWith(':')) return true;
+                return part === pathParts[index];
+            }
+            );
         });
     };
 
@@ -24,8 +26,8 @@ const BrowserRouter = function (routes, rootElement) {
 
         routeParts.forEach((part, index) => {
             if (part.startsWith(':')) {
-                const paramName = part.slice(1);
-                params[paramName] = pathParts[index];
+                const key = part.slice(1);
+                params[key] = pathParts[index];
             }
         });
 
