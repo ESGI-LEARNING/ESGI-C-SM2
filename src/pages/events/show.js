@@ -25,11 +25,9 @@ export class EventDetails extends JoDOM.Component {
             .then(data => this.setState({ event: data, eventSpots: data.spots }));
     }
 
-
-
     render() {
         const { event, eventSpots } = this.state;
-
+        const sport = event.category || {};
         return {
             type: 'div',
             children: [
@@ -37,52 +35,95 @@ export class EventDetails extends JoDOM.Component {
                 {
                     type: 'main',
                     props: {
-                        class: 'main-show',
+                        class: '',
                     },
                     children: [
-                        JoDOM.createElement(Text, { type: 'h1', content: event.title }),
                         {
                             type: 'div',
                             props: {
-                                class: 'map-container',
+                                class: 'main-show',
                             },
                             children: [
                                 {
-                                    type: 'section',
-                                    props: {
-                                        class: 'card-spot-container',
-                                    },
+                                    type: 'div',
                                     children: [
                                         {
-                                            type: 'ul',
+                                            type: 'div',
                                             props: {
-                                                class: 'card-spot-list',
+                                                class: 'content-show',
                                             },
-                                            children: eventSpots.map((spot, index) =>
-                                                JoDOM.createElement(CardsSpots, { key: index, ...spot }, [])
-                                            )
-                                        }
-                                    ]
-                                },
-                                {
-                                    type: 'div',
-                                    props: {
-                                        id: 'map',
-                                    },
+                                            children: [
+                                                {
+                                                    type: 'div',
+                                                    props: {
+                                                        class: '',
+                                                    },
+                                                    children: [
+                                                        JoDOM.createElement(Text, { type: 'h2', content: event.title }),
+                                                        JoDOM.createElement(Text, { type: 'p', content: event.description }),
+                                                    ],
+                                                },
+                                                {
+                                                    type: 'div',
+                                                    props: {
+                                                        class: 'content-show-info',
+                                                    },
+                                                    children: [
+                                                        JoDOM.createElement(Text, { type: 'time', content: new Date(event.startDate).toLocaleDateString() }),
+                                                        JoDOM.createElement(Text, { type: 'span', class: 'pill', content: sport.name }),
+                                                    ],
+                                                },
+                                            ],
+                                        },
+                                        {
+                                            type: 'div',
+                                            props: {
+                                                class: 'map-container',
+                                            },
+                                            children: [
+                                                {
+                                                    type: 'section',
+                                                    props: {
+                                                        class: 'card-spot-container',
+                                                    },
+                                                    children: [
+                                                        {
+                                                            type: 'ul',
+                                                            props: {
+                                                                class: 'card-spot-list',
+                                                            },
+                                                            children: eventSpots.map((spot, index) =>
+                                                                JoDOM.createElement(CardsSpots, { key: index, ...spot }, [])
+                                                            )
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    type: 'div',
+                                                    props: {
+                                                        id: 'map',
+                                                    },
+                                                },
+                                            ],
+                                        },
+                                    ],
+
                                 },
                             ],
-                        },
+
+                            events: {
+                                mounted: [
+                                    async function () {
+                                        await Leaflet(event);
+                                    },
+                                ],
+                            },
+
+                        }
                     ],
                 },
                 Footer,
             ],
-            events: {
-                mounted: [
-                    async function () {
-                        await Leaflet(event);
-                    },
-                ],
-            },
         };
     }
 }
