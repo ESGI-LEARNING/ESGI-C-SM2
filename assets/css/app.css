@@ -686,7 +686,7 @@ header nav ul li a {
 @media screen and (max-width: 768px) {
   .card {
     width: 15rem;
-    height: 35rem;
+    height: auto;
   }
   .card img {
     width: 100%;
@@ -765,6 +765,11 @@ header nav ul li a {
   gap: 6rem;
   padding: 1rem;
   list-style: none;
+}
+@media screen and (max-width: 768px) {
+  .card-list ul {
+    gap: 1rem;
+  }
 }
 
 .carousel-container {
