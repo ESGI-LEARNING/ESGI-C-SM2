@@ -2,9 +2,10 @@
   margin: 2rem;
   padding: 2rem;
   border-radius: 8px;
-  max-width: 140rem;
-
+  max-width: 175rem;
+  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 
   h2 {
@@ -19,33 +20,34 @@
     max-width: 70rem;
   }
 
-  div {
-    display: flex;
-    flex-direction: column; 
-
-    time {
+  time {
     font-size: 12px;
     font-style: italic;
-    }
+  }
 
-    .pill {
-        background: var(--blue, #0078d0);
-        color: #fff;
-        padding: 0.5rem 2rem;
-        border-radius: 999px;
-        display: inline-block;
-        margin-bottom: 1rem;
-    }
+  .pill {
+    background: var(--blue, #0078d0);
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 1rem;
   }
 }
 
+.content-show-info {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: .8rem;
+}
 
 
 @media screen and (max-width: 768px) {
-    .main-show{
-      display: flex;
-      flex-direction: column-reverse;
-    
+  .main-show {
+    display: flex;
+    flex-direction: column-reverse;
+
     .content-show {
       flex-direction: column;
       align-items: center;
