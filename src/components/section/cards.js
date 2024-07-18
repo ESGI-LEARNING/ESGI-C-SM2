@@ -21,7 +21,7 @@ export default class Cards extends JoDOM.Component {
                         click: [
                             function (event) {
                                 event.preventDefault();
-                                history.pushState(null, null, `/events/:${id}`);
+                                history.pushState(null, null, `/events/${id}`);
                             },
                         ],
                     },
