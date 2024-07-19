@@ -1,5 +1,4 @@
 import { BrowserLink } from './BrowserRouter.js';
-
 export const NavBar = {
     type: 'nav',
     children: [

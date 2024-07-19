@@ -1,9 +1,8 @@
 import { Header } from '../../components/header.js';
 import { Footer } from '../../components/footer.js';
-import { FormFilter } from '../../components/form/formFilter.js';
+import FormFilter from '../../components/form/formFilter.js';
 import Cards from '../../components/section/cards.js';
 import JoDOM from '../../../core/dom/JoDOM.js';
-import { fetchData } from '../../components/api/fetchData.js';
 
 export class Events extends JoDOM.Component {
     constructor(props) {
@@ -30,7 +29,7 @@ export class Events extends JoDOM.Component {
                 {
                     type: 'main',
                     children: [
-                        FormFilter,
+                        JoDOM.createElement(FormFilter),
                         {
                             type: 'section',
                             props: {

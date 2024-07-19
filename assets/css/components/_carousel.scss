@@ -1,7 +1,7 @@
 .carousel-container {
     display: flex;
     gap: 3rem;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     padding: 2rem;
 
@@ -21,6 +21,12 @@
 
         &.active {
             cursor: grabbing;
+        }
+
+        .card {
+            @media screen and (max-width: 768px) {
+                width: 30rem;
+            }
         }
     }
 }

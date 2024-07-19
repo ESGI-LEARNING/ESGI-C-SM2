@@ -48,14 +48,12 @@ export default class EvenementList extends JoDOM.Component {
                             props: {
                                 class: 'carousel-row',
                             },
-                            children: events
-                                .slice(0, 5)
-                                .map((event, index) =>
-                                    JoDOM.createElement(Cards, {
-                                        key: index,
-                                        ...event,
-                                    }),
-                                ),
+                            children: events.slice(0, 5).map((event, index) =>
+                                JoDOM.createElement(Cards, {
+                                    key: index,
+                                    ...event,
+                                }),
+                            ),
                         },
                     ],
                 },

@@ -14,7 +14,7 @@ export const addEventMarker = (map, data) => {
 
     marker
         .bindPopup(
-            `<b>${title}</b><br>${category.name}<br><time>${new Date(startDate).toLocaleDateString()} - ${new Date(endDate).toLocaleDateString()}</time>`,
+            `<b>${title}</b><br><span class="pill">${category.name}</span><br><time>${new Date(startDate).toLocaleDateString()} - ${new Date(endDate).toLocaleDateString()}</time>`,
         )
         .openPopup();
 };

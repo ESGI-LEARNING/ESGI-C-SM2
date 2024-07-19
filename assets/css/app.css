@@ -490,6 +490,27 @@ header nav ul li a {
     text-transform: uppercase;
     transition: color 0.3s;
 }
+header .burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+header .burger-menu .burger-line {
+    width: 2rem;
+    height: 0.25rem;
+    background: #000;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
 
 @media screen and (max-width: 768px) {
     header {
@@ -498,8 +519,47 @@ header nav ul li a {
     header img {
         max-width: 6rem;
     }
+    header .burger-menu {
+        display: flex;
+    }
+    header .burger-menu.open .burger-line {
+        background: #fff;
+    }
+    header .burger-menu.open .burger-line:first-child {
+        transform: rotate(45deg);
+    }
+    header .burger-menu.open .burger-line:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    header .burger-menu.open .burger-line:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+    header nav {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px;
+        background: #00287f;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
     header nav ul {
-        gap: 1.5rem;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 5rem;
+        height: 100%;
+    }
+    header nav ul li {
+        margin: 1rem 0;
+    }
+    header nav ul li a {
+        color: #fff;
+    }
+    header nav.open {
+        transform: translateX(0);
     }
 }
 .hero-container {
@@ -666,7 +726,7 @@ header nav ul li a {
     background: var(--white, #fff);
     box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.15);
     width: 35rem;
-    height: 40rem;
+    height: auto;
 }
 .card img {
     width: 100%;
@@ -675,14 +735,19 @@ header nav ul li a {
 }
 .card .content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-between;
 }
 .card .content h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 2.4rem;
+    font-family: 'Olympic Headline', sans-serif;
 }
 .card .content p {
-    font-size: 16px;
+    font-size: 1.6rem;
     color: #333;
+    flex-grow: 1;
 }
 .card .content .pill {
     background: var(--blue, #0078d0);
@@ -691,6 +756,19 @@ header nav ul li a {
     border-radius: 999px;
     display: inline-block;
     margin-bottom: 1rem;
+    font-weight: bold;
+    font-family: 'Olympic Sans', sans-serif;
+    width: fit-content;
+}
+.card .content time {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    color: #848484;
+    align-content: end;
+    width: fit-content;
+    margin-left: auto;
 }
 
 @media screen and (max-width: 768px) {
@@ -721,25 +799,54 @@ header nav ul li a {
     z-index: 999;
     left: 2rem;
 }
+@media screen and (max-width: 768px) {
+    .card-spot-container {
+        left: 0;
+        position: inherit;
+        z-index: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+}
 .card-spot-container .card-spot-list {
     display: flex;
     flex-direction: column;
     padding: 0;
     height: 79vh;
     overflow: scroll;
+    gap: 1rem;
+}
+@media screen and (max-width: 768px) {
+    .card-spot-container .card-spot-list {
+        flex-direction: row;
+        width: 40rem;
+        height: inherit;
+        min-height: 18rem;
+        overflow-x: scroll;
+    }
 }
 .card-spot-container .card-spot-list .card-spot {
     background-color: #fff;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 1rem;
     min-height: 12rem;
     overflow: hidden;
     display: flex;
+    margin: 1rem auto;
     flex-direction: column;
     align-items: center;
     max-width: 37.3rem;
     border-left: solid 1rem #0078d0;
+}
+@media screen and (max-width: 768px) {
+    .card-spot-container .card-spot-list .card-spot {
+        flex-direction: row;
+        max-width: 100%;
+        height: 7.5rem;
+        overflow: visible;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 .card-spot-container .card-spot-list .card-spot .content {
     padding: 0.5rem 1rem;
@@ -747,6 +854,8 @@ header nav ul li a {
     flex-direction: column;
     align-content: center;
     height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 .card-spot-container .card-spot-list .card-spot .content .title {
     color: #000;
@@ -763,6 +872,11 @@ header nav ul li a {
     gap: 10px;
     font-size: 16px;
     flex-shrink: 0;
+}
+@media screen and (max-width: 768px) {
+    .card-spot-container .card-spot-list .card-spot .content .description {
+        font-size: 12px;
+    }
 }
 
 .card-list {
@@ -786,7 +900,7 @@ header nav ul li a {
 .carousel-container {
     display: flex;
     gap: 3rem;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
     padding: 2rem;
     scrollbar-width: none;
@@ -804,6 +918,11 @@ header nav ul li a {
 }
 .carousel-container .carousel-row.active {
     cursor: grabbing;
+}
+@media screen and (max-width: 768px) {
+    .carousel-container .carousel-row .card {
+        width: 30rem;
+    }
 }
 
 .evenement-container {
@@ -993,6 +1112,13 @@ header nav ul li a {
     z-index: 1;
     overflow: clip;
 }
+@media screen and (max-width: 768px) {
+    .map-container {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 33rem;
+    }
+}
 
 .content-show {
     margin: 2rem;
@@ -1025,6 +1151,12 @@ header nav ul li a {
     border-radius: 999px;
     display: inline-block;
     margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Olympic Headline', sans-serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .content-show-info {
@@ -1038,6 +1170,12 @@ header nav ul li a {
     .main-show {
         display: flex;
         flex-direction: column-reverse;
+    }
+    .main-show .main-show-header {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
     }
     .main-show .content-show {
         flex-direction: column;
@@ -1057,10 +1195,25 @@ header nav ul li a {
 .leaflet-popup-content {
     font-size: 1.6rem;
     line-height: normal;
+    font-family: 'Olympic Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.leaflet-popup-content b {
+    font-size: 1.6rem;
+    font-family: 'Olympic Headline', sans-serif;
+}
+.leaflet-popup-content .pill {
+    background-color: #0078d0;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    width: fit-content;
 }
 .leaflet-popup-content time {
-    font-size: 1.2rem;
-    color: #0078d0;
+    font-size: 1.1rem;
+    color: #000;
 }
 
 .container-not-found {
@@ -1120,10 +1273,17 @@ header nav ul li a {
     font-family: 'Olympic Headline', sans-serif;
     margin: 2rem;
 }
+@media screen and (max-width: 768px) {
+    .breadcrumb {
+        margin: 0.5rem 0;
+    }
+}
 .breadcrumb::before {
     content: '<';
     margin: 0 1rem;
     font-size: 1.6rem;
+    display: inline-block;
+    vertical-align: center;
     font-family: 'Olympic Headline', sans-serif;
 }
 

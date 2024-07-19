@@ -1,9 +1,26 @@
 .leaflet-popup-content {
     font-size: 1.6rem;
     line-height: normal;
+    font-family: 'Olympic Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+
+    b {
+        font-size: 1.6rem;
+        font-family: 'Olympic Headline', sans-serif;
+    }
+
+    .pill {
+        background-color: #0078d0;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 999px;
+        width: fit-content;
+    }
 
     time {
-        font-size: 1.2rem;
-        color: #0078d0;
+        font-size: 1.1rem;
+        color: #000;
     }
 }
