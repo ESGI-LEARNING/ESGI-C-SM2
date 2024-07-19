@@ -1,119 +1,67 @@
-export const FormFilter = {
-    type: 'div',
-    props: {
-        class: 'input-events',
-    },
-    children: [
-        {
+import JoDOM from '../../../core/dom/JoDOM.js';
+import Option from './select/option.js';
+export default class FormFilter extends JoDOM.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            categories: [],
+        };
+    }
+
+    componentDidMount() {
+        fetch('https://api-esgi.faispaschier.fr/categories/', {
+            method: 'GET',
+        })
+            .then((response) => response.json())
+            .then((data) => this.setState({ categories: data }));
+    }
+
+    render() {
+        const { categories } = this.state;
+        return {
             type: 'div',
             props: {
-                class: 'input-search-container',
+                class: 'input-events',
             },
             children: [
                 {
                     type: 'div',
                     props: {
-                        class: 'input-icon-wrapper',
+                        class: 'input-select-container',
                     },
                     children: [
                         {
-                            type: 'img',
+                            type: 'select',
                             props: {
-                                src: '/assets/images/icons/search.svg',
-                                alt: 'Search Icon',
-                                class: 'search-icon',
-                            },
-                        },
-                        {
-                            type: 'input',
-                            props: {
-                                type: 'text',
-                                class: 'input-search',
-                                id: 'search',
-                                name: 'search',
-                                placeholder: 'Recherche',
-                                required: true,
-                            },
-                        },
-                    ],
-                },
-            ],
-        },
-        {
-            type: 'div',
-            props: {
-                class: 'input-select-container',
-            },
-            children: [
-                {
-                    type: 'select',
-                    props: {
-                        class: 'input-select',
-                        id: 'type',
-                        name: 'type',
-                    },
-                    children: [
-                        {
-                            type: 'option',
-                            props: {
-                                value: 'all',
+                                class: 'input-select',
+                                id: 'type',
+                                name: 'type',
                             },
                             children: [
                                 {
-                                    type: 'TEXT_NODE',
-                                    content: 'Tous',
+                                    type: 'option',
+                                    props: {
+                                        value: 'category',
+                                    },
+                                    children: [
+                                        {
+                                            type: 'TEXT_NODE',
+                                            content: 'category',
+                                        },
+                                    ],
                                 },
-                            ],
-                        },
-                        {
-                            type: 'option',
-                            props: {
-                                value: 'restaurant',
-                            },
-                            children: [
-                                {
-                                    type: 'TEXT_NODE',
-                                    content: 'Restaurant',
-                                },
-                            ],
-                        },
-                        {
-                            type: 'option',
-                            props: {
-                                value: 'hotel',
-                            },
-                            children: [
-                                {
-                                    type: 'TEXT_NODE',
-                                    content: 'Hotel',
-                                },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    type: 'select',
-                    props: {
-                        class: 'input-select',
-                        id: 'city',
-                        name: 'city',
-                    },
-                    children: [
-                        {
-                            type: 'option',
-                            props: {
-                                value: 'all',
-                            },
-                            children: [
-                                {
-                                    type: 'TEXT_NODE',
-                                    content: 'Toutes',
-                                },
+                                ...categories.map((category, index) =>
+                                    JoDOM.createElement(Option, {
+                                        key: index,
+                                        value: category.id,
+                                        children: category.name,
+                                    }),
+                                ),
                             ],
                         },
                     ],
                 },
             ],
-        },
-    ],
-};
+        };
+    }
+}

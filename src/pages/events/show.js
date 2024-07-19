@@ -52,6 +52,9 @@ export class EventDetails extends JoDOM.Component {
                             children: [
                                 {
                                     type: 'div',
+                                    props: {
+                                        class: 'main-show-header',
+                                    },
                                     children: [
                                         {
                                             type: 'div',

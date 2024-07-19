@@ -32,6 +32,12 @@
         border-radius: 999px;
         display: inline-block;
         margin-bottom: 1rem;
+        text-align: center;
+        font-family: 'Olympic Headline', sans-serif;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
     }
 }
 
@@ -46,6 +52,13 @@
     .main-show {
         display: flex;
         flex-direction: column-reverse;
+
+        .main-show-header {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 1rem;
+        }
 
         .content-show {
             flex-direction: column;

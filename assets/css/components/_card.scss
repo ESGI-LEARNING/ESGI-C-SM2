@@ -4,7 +4,7 @@
     background: var(--white, #fff);
     box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.15);
     width: 35rem;
-    height: 40rem;
+    height: auto;
 
     img {
         width: 100%;
@@ -14,15 +14,20 @@
 
     .content {
         padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: space-between;
 
         h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
+            font-size: 2.4rem;
+            font-family: 'Olympic Headline', sans-serif;
         }
 
         p {
-            font-size: 16px;
+            font-size: 1.6rem;
             color: #333;
+            flex-grow: 1;
         }
 
         .pill {
@@ -32,6 +37,20 @@
             border-radius: 999px;
             display: inline-block;
             margin-bottom: 1rem;
+            font-weight: bold;
+            font-family: 'Olympic Sans', sans-serif;
+            width: fit-content;
+        }
+
+        time {
+            font-size: 1.2rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: normal;
+            color: #848484;
+            align-content: end;
+            width: fit-content;
+            margin-left: auto;
         }
     }
 }
