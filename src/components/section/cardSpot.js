@@ -1,16 +1,35 @@
 import JoDOM from '../../../core/dom/JoDOM.js';
 import Text from '../section/text.js';
+import { exportMap } from '../leaflet/leafletConfig.js';
 export default class CardsSpots extends JoDOM.Component {
     constructor(props) {
         super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(event) {
+        event.preventDefault();
+        this.activateMarkerPopup();
+    }
+
+    activateMarkerPopup() {
+        const mapEvent = exportMap();
+        mapEvent.setView(
+            [this.props.latitude, this.props.longitude - 0.06],
+            12,
+        );
     }
 
     render() {
         const { name, description } = this.props;
+
         return {
             type: 'li',
             props: {
                 class: 'card-spot',
+            },
+            events: {
+                click: [this.handleClick],
             },
             children: [
                 {
@@ -19,25 +38,25 @@ export default class CardsSpots extends JoDOM.Component {
                         class: 'content',
                     },
                     children: [
-                        JoDOM.createElement(Text, { type: 'h3', class: 'title', content: name }),
-                        JoDOM.createElement(Text, { type: 'p', class: 'description', content: description }),
+                        JoDOM.createElement(Text, {
+                            type: 'h3',
+                            class: 'title',
+                            content: name,
+                        }),
+                        JoDOM.createElement(Text, {
+                            type: 'p',
+                            class: 'description',
+                            content: description,
+                        }),
                         {
                             type: 'span',
                             props: {
                                 class: 'card-extend-button',
                             },
-                            events: {
-                                click: [
-                                    function (event) {
-                                        event.preventDefault();
-
-                                    },
-                                ],
-                            },
-                        }
+                        },
                     ],
                 },
             ],
-        }
-    };
+        };
+    }
 }

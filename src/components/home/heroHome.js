@@ -25,7 +25,8 @@ export default class HeroHome extends JoDOM.Component {
                             children: [
                                 {
                                     type: 'TEXT_NODE',
-                                    content: 'Où trouver le spot dont vous rêvez ?',
+                                    content:
+                                        'Où trouver le spot dont vous rêvez ?',
                                 },
                             ],
                         },
@@ -71,4 +72,3 @@ export default class HeroHome extends JoDOM.Component {
         };
     }
 }
-

@@ -1,7 +1,9 @@
 import '../../../node_modules/leaflet/dist/leaflet.js';
 
+let map = null;
+
 export const initMap = () => {
-    const map = L.map('map').setView([48.854444, 2.347722], 12);
+    map = L.map('map').setView([48.854444, 2.347722], 12);
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
             const { latitude, longitude } = position.coords;
@@ -13,5 +15,9 @@ export const initMap = () => {
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
+    return map;
+};
+
+export const exportMap = () => {
     return map;
 };

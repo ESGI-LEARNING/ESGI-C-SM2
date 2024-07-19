@@ -1,4 +1,4 @@
-import { renderStructure } from '../../core/dom/renderStructure.js'
+import { renderStructure } from '../../core/dom/renderStructure.js';
 
 export default class Component {
     constructor(props = {}) {
@@ -8,7 +8,7 @@ export default class Component {
 
     setState(newState) {
         this.state = { ...this.state, ...newState };
-        this.update()
+        this.update();
     }
 
     update() {

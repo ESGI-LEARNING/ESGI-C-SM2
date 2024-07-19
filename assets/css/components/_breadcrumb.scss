@@ -1,0 +1,12 @@
+.breadcrumb {
+    font-size: 1.6rem;
+    font-family: 'Olympic Headline', sans-serif;
+    margin: 2rem;
+
+    &::before {
+        content: '<';
+        margin: 0 1rem;
+        font-size: 1.6rem;
+        font-family: 'Olympic Headline', sans-serif;
+    }
+}

@@ -1,11 +1,11 @@
-import { renderStructure } from '../../core/dom/renderStructure.js'
-import JoDOM from '../../core/dom/JoDOM.js'
-import isClassComponent from '../../core/utils/type.js'
-import NotFound from '../pages/404.js'
+import { renderStructure } from '../../core/dom/renderStructure.js';
+import JoDOM from '../../core/dom/JoDOM.js';
+import isClassComponent from '../../core/utils/type.js';
+import NotFound from '../pages/404.js';
 
 const BrowserRouter = function (routes, rootElement) {
     const matchRoute = (pathname) => {
-        return routes.find(route => {
+        return routes.find((route) => {
             const routeParts = route.path.split('/');
             const pathParts = pathname.split('/');
 
@@ -14,8 +14,7 @@ const BrowserRouter = function (routes, rootElement) {
             return routeParts.every((part, index) => {
                 if (part.startsWith(':')) return true;
                 return part === pathParts[index];
-            }
-            );
+            });
         });
     };
 
@@ -46,7 +45,7 @@ const BrowserRouter = function (routes, rootElement) {
                 const Component = route.component;
                 const page = JoDOM.createElement(Component, params);
                 g = renderStructure(page);
-            } else if (typeof route.component === "function") {
+            } else if (typeof route.component === 'function') {
                 g = new route.component(params);
             } else {
                 g = renderStructure(route.component);
@@ -81,6 +80,7 @@ export const BrowserLink = function (props) {
         type: 'a',
         props: {
             href: props.to,
+            class: props.class,
         },
         events: {
             click: [

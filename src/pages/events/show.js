@@ -1,10 +1,10 @@
 import { Header } from '../../components/header.js';
 import { Footer } from '../../components/footer.js';
 import { Leaflet } from '../../components/leaflet/leaflet.js';
-import { FormFilter } from '../../components/form/formFilter.js';
-import JoDOM from '../../../core/dom/JoDOM.js'
+import JoDOM from '../../../core/dom/JoDOM.js';
 import Text from '../../components/section/text.js';
 import CardsSpots from '../../components/section/cardSpot.js';
+import { BrowserLink } from '../../components/BrowserRouter.js';
 
 export class EventDetails extends JoDOM.Component {
     constructor(props) {
@@ -12,17 +12,18 @@ export class EventDetails extends JoDOM.Component {
         this.state = {
             event: [],
             eventSpots: [],
+            map: null,
         };
     }
 
     componentDidMount() {
-        fetch(
-            `https://api-esgi.faispaschier.fr/events/${this.props.id}`,
-            {
-                method: 'GET',
-            })
-            .then(response => response.json())
-            .then(data => this.setState({ event: data, eventSpots: data.spots }));
+        fetch(`https://api-esgi.faispaschier.fr/events/${this.props.id}`, {
+            method: 'GET',
+        })
+            .then((response) => response.json())
+            .then((data) =>
+                this.setState({ event: data, eventSpots: data.spots }),
+            );
     }
 
     render() {
@@ -38,6 +39,11 @@ export class EventDetails extends JoDOM.Component {
                         class: '',
                     },
                     children: [
+                        BrowserLink({
+                            to: '/events',
+                            title: 'Retour',
+                            class: 'breadcrumb',
+                        }),
                         {
                             type: 'div',
                             props: {
@@ -59,8 +65,22 @@ export class EventDetails extends JoDOM.Component {
                                                         class: '',
                                                     },
                                                     children: [
-                                                        JoDOM.createElement(Text, { type: 'h2', content: event.title }),
-                                                        JoDOM.createElement(Text, { type: 'p', content: event.description }),
+                                                        JoDOM.createElement(
+                                                            Text,
+                                                            {
+                                                                type: 'h2',
+                                                                content:
+                                                                    event.title,
+                                                            },
+                                                        ),
+                                                        JoDOM.createElement(
+                                                            Text,
+                                                            {
+                                                                type: 'p',
+                                                                content:
+                                                                    event.description,
+                                                            },
+                                                        ),
                                                     ],
                                                 },
                                                 {
@@ -69,8 +89,25 @@ export class EventDetails extends JoDOM.Component {
                                                         class: 'content-show-info',
                                                     },
                                                     children: [
-                                                        JoDOM.createElement(Text, { type: 'time', content: new Date(event.startDate).toLocaleDateString() }),
-                                                        JoDOM.createElement(Text, { type: 'span', class: 'pill', content: sport.name }),
+                                                        JoDOM.createElement(
+                                                            Text,
+                                                            {
+                                                                type: 'time',
+                                                                content:
+                                                                    new Date(
+                                                                        event.startDate,
+                                                                    ).toLocaleDateString(),
+                                                            },
+                                                        ),
+                                                        JoDOM.createElement(
+                                                            Text,
+                                                            {
+                                                                type: 'span',
+                                                                class: 'pill',
+                                                                content:
+                                                                    sport.name,
+                                                            },
+                                                        ),
                                                     ],
                                                 },
                                             ],
@@ -92,11 +129,23 @@ export class EventDetails extends JoDOM.Component {
                                                             props: {
                                                                 class: 'card-spot-list',
                                                             },
-                                                            children: eventSpots.map((spot, index) =>
-                                                                JoDOM.createElement(CardsSpots, { key: index, ...spot }, [])
-                                                            )
-                                                        }
-                                                    ]
+                                                            children:
+                                                                eventSpots.map(
+                                                                    (
+                                                                        spot,
+                                                                        index,
+                                                                    ) =>
+                                                                        JoDOM.createElement(
+                                                                            CardsSpots,
+                                                                            {
+                                                                                key: index,
+                                                                                ...spot,
+                                                                            },
+                                                                            [],
+                                                                        ),
+                                                                ),
+                                                        },
+                                                    ],
                                                 },
                                                 {
                                                     type: 'div',
@@ -107,10 +156,8 @@ export class EventDetails extends JoDOM.Component {
                                             ],
                                         },
                                     ],
-
                                 },
                             ],
-
                             events: {
                                 mounted: [
                                     async function () {
@@ -118,8 +165,7 @@ export class EventDetails extends JoDOM.Component {
                                     },
                                 ],
                             },
-
-                        }
+                        },
                     ],
                 },
                 Footer,

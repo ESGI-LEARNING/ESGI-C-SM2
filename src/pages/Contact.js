@@ -1,7 +1,7 @@
 import { Header } from '../components/header.js';
 import { Footer } from '../components/footer.js';
 import { formContact } from '../components/form/formContact.js';
-import JoDOM from '../../core/dom/JoDOM.js'
+import JoDOM from '../../core/dom/JoDOM.js';
 
 export class Contact extends JoDOM.Component {
     constructor(props) {
