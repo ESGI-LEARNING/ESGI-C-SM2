@@ -15,8 +15,8 @@ export default class CardsSpots extends JoDOM.Component {
     activateMarkerPopup() {
         const mapEvent = exportMap();
         mapEvent.setView(
-            [this.props.latitude, this.props.longitude - 0.06],
-            12,
+            [this.props.latitude, this.props.longitude],
+            13,
         );
     }
 
