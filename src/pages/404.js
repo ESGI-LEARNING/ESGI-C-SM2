@@ -10,7 +10,6 @@ export default class NotFound extends JoDOM.Component {
 
     render() {
         return {
-
             type: 'div',
             children: [
                 Header,
@@ -48,7 +47,7 @@ export default class NotFound extends JoDOM.Component {
                                     ],
                                 },
                                 Cta({
-                                    title: 'Retourner à l\'accueil',
+                                    title: "Retourner à l'accueil",
                                     to: '/',
                                     props: {
                                         class: 'cta',
@@ -60,8 +59,6 @@ export default class NotFound extends JoDOM.Component {
                 },
                 Footer,
             ],
-
         };
     }
-
 }

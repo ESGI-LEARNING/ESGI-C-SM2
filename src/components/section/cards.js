@@ -5,7 +5,8 @@ export default class Cards extends JoDOM.Component {
     }
 
     render() {
-        const { title, description, category, startDate, endDate, id } = this.props;
+        const { title, description, category, startDate, endDate, id } =
+            this.props;
         return {
             type: 'li',
             props: {
@@ -74,7 +75,9 @@ export default class Cards extends JoDOM.Component {
                                     children: [
                                         {
                                             type: 'TEXT_NODE',
-                                            content: new Date(startDate).toLocaleDateString(),
+                                            content: new Date(
+                                                startDate,
+                                            ).toLocaleDateString(),
                                         },
                                     ],
                                 },
@@ -83,6 +86,6 @@ export default class Cards extends JoDOM.Component {
                     ],
                 },
             ],
-        }
+        };
     }
 }

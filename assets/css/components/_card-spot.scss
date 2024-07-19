@@ -25,10 +25,10 @@
             align-items: center;
 
             max-width: 37.3rem;
-            border-left: solid 1rem #0078D0;
+            border-left: solid 1rem #0078d0;
 
             .content {
-                padding: .5rem 1rem;
+                padding: 0.5rem 1rem;
                 display: flex;
                 flex-direction: column;
                 align-content: center;
@@ -36,7 +36,7 @@
 
                 .title {
                     color: #000;
-                    font-family: "Olympic Headline";
+                    font-family: 'Olympic Headline';
                     font-size: 24px;
                     font-style: normal;
                     font-weight: 700;
@@ -48,10 +48,10 @@
                     flex-direction: column;
                     align-items: center;
                     gap: 10px;
+                    font-size: 16px;
                     flex-shrink: 0;
                 }
             }
         }
-
     }
 }

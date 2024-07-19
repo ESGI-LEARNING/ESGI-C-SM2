@@ -2,80 +2,88 @@ export const Footer = {
     type: 'footer',
     children: [
         {
-            type: 'img',
+            type: 'div',
             props: {
-                src: '../../assets/images/icons/logo_footer.svg',
-                alt: 'logo-footer',
-                class: 'logo-footer',
+                class: 'bg-footer',
             },
-        },
-        {
-            type: 'p',
             children: [
                 {
-                    type: 'TEXT_NODE',
-                    content: 'copyright @2024',
+                    type: 'img',
+                    props: {
+                        src: '../../assets/images/icons/logo_footer.svg',
+                        alt: 'logo-footer',
+                        class: 'logo-footer',
+                    },
                 },
-            ],
-        },
-        {
-            type: 'ul',
-            children: [
                 {
-                    type: 'li',
+                    type: 'p',
                     children: [
                         {
-                            type: 'a',
-                            props: {
-                                href: 'https://www.facebook.com/',
-                            },
-                            children: [
-                                {
-                                    type: 'img',
-                                    props: {
-                                        src: '../../assets/images/icons/facebook.svg',
-                                        alt: 'facebook',
-                                    },
-                                },
-                            ],
+                            type: 'TEXT_NODE',
+                            content: 'copyright @2024',
                         },
                     ],
                 },
                 {
-                    type: 'li',
+                    type: 'ul',
                     children: [
                         {
-                            type: 'a',
-                            props: {
-                                href: 'https://www.instagram.com/',
-                            },
+                            type: 'li',
                             children: [
                                 {
-                                    type: 'img',
+                                    type: 'a',
                                     props: {
-                                        src: '../../assets/images/icons/instagram.svg',
-                                        alt: 'instagram',
+                                        href: 'https://www.facebook.com/',
                                     },
+                                    children: [
+                                        {
+                                            type: 'img',
+                                            props: {
+                                                src: '../../assets/images/icons/facebook.svg',
+                                                alt: 'facebook',
+                                            },
+                                        },
+                                    ],
                                 },
                             ],
                         },
-                    ],
-                },
-                {
-                    type: 'li',
-                    children: [
                         {
-                            type: 'a',
-                            props: {
-                                href: 'https://www.twitter.com/',
-                            },
+                            type: 'li',
                             children: [
                                 {
-                                    type: 'img',
+                                    type: 'a',
                                     props: {
-                                        src: '../../assets/images/icons/twitter.svg',
-                                        alt: 'twitter',
+                                        href: 'https://www.instagram.com/',
                                     },
+                                    children: [
+                                        {
+                                            type: 'img',
+                                            props: {
+                                                src: '../../assets/images/icons/instagram.svg',
+                                                alt: 'instagram',
+                                            },
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                        {
+                            type: 'li',
+                            children: [
+                                {
+                                    type: 'a',
+                                    props: {
+                                        href: 'https://www.twitter.com/',
+                                    },
+                                    children: [
+                                        {
+                                            type: 'img',
+                                            props: {
+                                                src: '../../assets/images/icons/twitter.svg',
+                                                alt: 'twitter',
+                                            },
+                                        },
+                                    ],
                                 },
                             ],
                         },

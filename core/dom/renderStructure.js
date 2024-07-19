@@ -1,23 +1,23 @@
 export function renderStructure(structure) {
     if (structure.type === 'TEXT_NODE') {
-        return document.createTextNode(structure.content)
+        return document.createTextNode(structure.content);
     }
 
-    const element = document.createElement(structure.type)
+    const element = document.createElement(structure.type);
 
     if (structure.children) {
-        structure.children.forEach(child => {
-            const childNode = renderStructure(child)
-            element.appendChild(childNode)
-        })
+        structure.children.forEach((child) => {
+            const childNode = renderStructure(child);
+            element.appendChild(childNode);
+        });
     }
 
     if (structure.props) {
         for (const propName in structure.props) {
-            if (propName === "style") {
+            if (propName === 'style') {
                 Object.assign(element.style, structure.props[propName]);
-            } else if (propName.startsWith("data-")) {
-                element.dataset[propName.replace("data-", "")] =
+            } else if (propName.startsWith('data-')) {
+                element.dataset[propName.replace('data-', '')] =
                     structure.props[propName];
             } else {
                 element.setAttribute(propName, structure.props[propName]);
@@ -42,23 +42,24 @@ export function renderStructure(structure) {
     }
 
     if (structure.loop) {
-        const container = document.createElement('ul')
-        element.appendChild(container)
+        const container = document.createElement('ul');
+        element.appendChild(container);
         for (let i = 0; i < structure.loop.count; i++) {
-            const child = renderStructure(structure.loop.template)
-            container.appendChild(child)
+            const child = renderStructure(structure.loop.template);
+            container.appendChild(child);
         }
     }
-
 
     if (structure.instance && structure.instance.setRootElement) {
         structure.instance.setRootElement(element);
 
-        if (structure.instance.isRender && structure.instance.componentDidMount) {
+        if (
+            structure.instance.isRender &&
+            structure.instance.componentDidMount
+        ) {
             structure.instance.componentDidMount();
         }
     }
-
 
     return element;
 }

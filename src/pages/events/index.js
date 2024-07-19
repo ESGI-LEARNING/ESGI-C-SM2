@@ -2,7 +2,7 @@ import { Header } from '../../components/header.js';
 import { Footer } from '../../components/footer.js';
 import { FormFilter } from '../../components/form/formFilter.js';
 import Cards from '../../components/section/cards.js';
-import JoDOM from '../../../core/dom/JoDOM.js'
+import JoDOM from '../../../core/dom/JoDOM.js';
 import { fetchData } from '../../components/api/fetchData.js';
 
 export class Events extends JoDOM.Component {
@@ -14,19 +14,15 @@ export class Events extends JoDOM.Component {
     }
 
     componentDidMount() {
-        fetch(
-            'https://api-esgi.faispaschier.fr/events/',
-            {
-                method: 'GET',
-            })
-            .then(response => response.json())
-            .then(data => this.setState({ events: data }));
+        fetch('https://api-esgi.faispaschier.fr/events/', {
+            method: 'GET',
+        })
+            .then((response) => response.json())
+            .then((data) => this.setState({ events: data }));
     }
-
 
     render() {
         const { events } = this.state;
-        console.log(events);
         return {
             type: 'div',
             children: [
@@ -47,18 +43,19 @@ export class Events extends JoDOM.Component {
                                         class: 'cards',
                                     },
                                     children: events.map((event, index) =>
-                                        JoDOM.createElement(Cards, { key: index, ...event }, [])
-                                    )
-                                }
-                            ]
-
+                                        JoDOM.createElement(
+                                            Cards,
+                                            { key: index, ...event },
+                                            [],
+                                        ),
+                                    ),
+                                },
+                            ],
                         },
                     ],
                 },
+                Footer,
             ],
-            Footer,
         };
-    };
-
+    }
 }
-

@@ -3,10 +3,12 @@ import { addEventMarker, addSpotMarkers } from './addMarkers.js';
 
 export const Leaflet = async function Leaflet(event) {
     if (document.getElementById('map') && event) {
-        const map = initMap();
+        const mapEvent = initMap();
         if (event.spots) {
-            addSpotMarkers(map, event.spots);
-            addEventMarker(map, event);
+            addSpotMarkers(mapEvent, event.spots);
+            addEventMarker(mapEvent, event);
+
+            return mapEvent;
         }
     }
 };

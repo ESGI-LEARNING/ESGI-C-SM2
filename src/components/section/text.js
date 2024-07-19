@@ -2,8 +2,7 @@ import JoDOM from '../../../core/dom/JoDOM.js';
 export default class Text extends JoDOM.Component {
     constructor(props) {
         super(props);
-        this.state = {
-        };
+        this.state = {};
     }
 
     render() {

@@ -1,6 +1,6 @@
 .amuse-section {
     margin-top: 10rem;
-    max-width: 140rem;
+    max-width: 190rem;
     margin: 10rem auto 0 auto;
     flex-wrap: wrap;
 
@@ -12,31 +12,31 @@
         margin-bottom: 4rem;
     }
 
-  .amuse-title1{
-    display: none;
-  }
-  .amuse-title2{
-    display: flex;
-    justify-content: center;
-  }
+    .amuse-title1 {
+        display: none;
+    }
 
-  p {
-    color: var(--black);
-    font-family: "Olympic Sans", sans-serif;
-    font-size: 1.6rem;
-    margin-bottom: 64px;
-    max-width: 50rem;
-    text-align: center;
-  }
+    .amuse-title2 {
+        display: flex;
+        justify-content: center;
+    }
 
-  img {
-    max-height: 40rem;
-    max-width: 60rem;
-    gap: 0px;
-    border-radius: 1.6rem;
-    opacity: 0px;
-    
-  }
+    p {
+        color: var(--black);
+        font-family: 'Olympic Sans', sans-serif;
+        font-size: 1.6rem;
+        margin-bottom: 64px;
+        max-width: 50rem;
+        text-align: center;
+    }
+
+    img {
+        max-height: 40rem;
+        max-width: 60rem;
+        gap: 0px;
+        border-radius: 1.6rem;
+        opacity: 0px;
+    }
 
     .cta {
         display: inline-block;
@@ -55,39 +55,38 @@
         margin-left: 50%;
         transform: translateX(-50%);
 
-    &:hover {
-        background-color: #fff;
-        color: #00287F;
+        &:hover {
+            background-color: #fff;
+            color: #00287f;
+        }
     }
-    
-}
 }
 
 @media screen and (max-width: 768px) {
-  .amuse-section {
+    .amuse-section {
+        h2 {
+            font-size: 4.8rem;
+            margin-bottom: 2rem;
+            margin: 0 auto;
+        }
 
-    h2 {
-      font-size: 4.8rem;
-      margin-bottom: 2rem;
-      margin: 0 auto;
-    } 
+        .amuse-title2 {
+            display: none;
+        }
 
-    .amuse-title2{
-      display: none;
-    }
-    .amuse-title1{
-      display: flex;
-      justify-content: center;
-    }
+        .amuse-title1 {
+            display: flex;
+            justify-content: center;
+        }
 
-    img{
-      order: 2;
-      margin: 2rem 0;
+        img {
+            order: 2;
+            margin: 2rem 0;
+        }
+
+        p {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+        }
     }
-    p {
-      font-size: 1.6rem;
-      margin-bottom: 2rem;
-    }
-    
-  }
 }
