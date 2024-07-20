@@ -5,7 +5,7 @@ export default class Cards extends JoDOM.Component {
     }
 
     render() {
-        const { title, description, category, startDate, endDate, id } =
+        const { title, description, category, startDate, endDate, id, image } =
             this.props;
         return {
             type: 'li',
@@ -30,7 +30,7 @@ export default class Cards extends JoDOM.Component {
                         {
                             type: 'img',
                             props: {
-                                src: '../../../assets/images/paris.png',
+                                src: '../../../assets/images/paris.png' || image + `?random=${id}`,
                                 alt: '',
                             },
                         },

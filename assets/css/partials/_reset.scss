@@ -42,7 +42,11 @@ img {
 }
 
 main {
-    padding: 3rem 2rem;
-    max-width: 144rem;
+
+    max-width: 124rem;
     margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        padding: 0 2rem;
+    }
 }
