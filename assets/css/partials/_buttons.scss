@@ -12,4 +12,8 @@
     font-family: 'Olympic Headline', sans-serif;
     cursor: pointer;
     border-radius: 2rem;
+
+    &:hover {
+        background-color: #0049AA;
+    }
 }

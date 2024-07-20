@@ -80,7 +80,7 @@ export const BrowserLink = function (props) {
         type: 'a',
         props: {
             href: props.to,
-            class: props.class,
+            class: props.class || '',
         },
         events: {
             click: [
