@@ -9,19 +9,43 @@ export class Events extends JoDOM.Component {
         super(props);
         this.state = {
             events: [],
+            filteredEvents: [],
         };
     }
-
     componentDidMount() {
-        fetch('https://api-esgi.faispaschier.fr/events/', {
+        console.log('Events - Component mounted');
+        this.fetchEvents();
+    }
+    
+    fetchEvents(category = '') {
+        console.log('Events - Fetching events with category:', category);
+        let url = 'https://api-esgi.faispaschier.fr/events';
+        if (category) {
+            url += `?category=${category}`;
+        }
+        console.log('Events - Fetch URL:', url);
+    
+        fetch(url, {
             method: 'GET',
         })
             .then((response) => response.json())
-            .then((data) => this.setState({ events: data }));
+            .then((data) => {
+                console.log('Events - Fetched data:', data);
+                this.setState({ events: data, filteredEvents: data });
+            })
+            .catch((error) => {
+                console.error('Events - Error fetching data:', error);
+            });
     }
-
+    
+    handleCategoryChange = (category) => {
+        console.log('Events - Category changed to:', category);
+        this.fetchEvents(category);
+    }
+    
     render() {
-        const { events } = this.state;
+        const { filteredEvents } = this.state;
+        console.log('Events - Rendering with filteredEvents:', filteredEvents);
         return {
             type: 'div',
             children: [
@@ -29,7 +53,9 @@ export class Events extends JoDOM.Component {
                 {
                     type: 'main',
                     children: [
-                        JoDOM.createElement(FormFilter),
+                        JoDOM.createElement(FormFilter, {
+                            onCategoryChange: this.handleCategoryChange
+                        }),
                         {
                             type: 'section',
                             props: {
@@ -41,7 +67,7 @@ export class Events extends JoDOM.Component {
                                     props: {
                                         class: 'cards',
                                     },
-                                    children: events.map((event, index) =>
+                                    children: filteredEvents.map((event, index) =>
                                         JoDOM.createElement(
                                             Cards,
                                             { key: index, ...event },

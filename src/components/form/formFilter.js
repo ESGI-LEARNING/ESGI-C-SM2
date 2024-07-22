@@ -1,6 +1,6 @@
 import JoDOM from '../../../core/dom/JoDOM.js';
 import Option from './select/option.js';
-import '../../pages/events/index.js';
+
 export default class FormFilter extends JoDOM.Component {
     constructor(props) {
         super(props);
@@ -18,8 +18,13 @@ export default class FormFilter extends JoDOM.Component {
     }
 
     updateEvents(value) {
-        console.log(value);
-        console.log(this.state.events);
+        console.log('FormFilter - Selected category:', value);
+        if (this.props.onCategoryChange) {
+            console.log('FormFilter - Calling onCategoryChange');
+            this.props.onCategoryChange(value);
+        } else {
+            console.log('FormFilter - onCategoryChange is not defined');
+        }
     }
 
     render() {
@@ -55,19 +60,19 @@ export default class FormFilter extends JoDOM.Component {
                                 {
                                     type: 'option',
                                     props: {
-                                        value: 'category',
+                                        value: '',
                                     },
                                     children: [
                                         {
                                             type: 'TEXT_NODE',
-                                            content: 'category',
+                                            content: 'Toutes les catégories',
                                         },
                                     ],
                                 },
                                 ...categories.map((category, index) =>
                                     JoDOM.createElement(Option, {
                                         key: index,
-                                        value: category.id,
+                                        value: category.name,
                                         children: category.name,
                                     }),
                                 ),
