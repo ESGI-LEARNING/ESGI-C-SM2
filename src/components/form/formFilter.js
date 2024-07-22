@@ -1,5 +1,6 @@
 import JoDOM from '../../../core/dom/JoDOM.js';
 import Option from './select/option.js';
+import '../../pages/events/index.js';
 export default class FormFilter extends JoDOM.Component {
     constructor(props) {
         super(props);
@@ -14,6 +15,11 @@ export default class FormFilter extends JoDOM.Component {
         })
             .then((response) => response.json())
             .then((data) => this.setState({ categories: data }));
+    }
+
+    updateEvents(value) {
+        console.log(value);
+        console.log(this.state.events);
     }
 
     render() {
@@ -36,6 +42,14 @@ export default class FormFilter extends JoDOM.Component {
                                 class: 'input-select',
                                 id: 'type',
                                 name: 'type',
+                            },
+                            events: {
+                                change: [
+                                    (event) => {
+                                        const { value } = event.target;
+                                        this.updateEvents(value);
+                                    },
+                                ]
                             },
                             children: [
                                 {

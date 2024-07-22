@@ -30,7 +30,7 @@ export default class Cards extends JoDOM.Component {
                         {
                             type: 'img',
                             props: {
-                                src: '../../../assets/images/paris.png' || image + `?random=${id}`,
+                                src: image + `?random=${id}`,
                                 alt: '',
                             },
                         },

@@ -1038,6 +1038,7 @@ header .burger-menu .burger-line {
   gap: 1rem;
   max-width: 124rem;
   margin: 2rem auto;
+  padding: 0 2rem;
 }
 .input-events .input-search-container {
   flex: 1;
