@@ -1,4 +1,5 @@
 import { renderStructure } from '../../../core/dom/renderStructure.js';
+import { validateStructure, validator } from '../../../core/typeCheck.js'
 
 export default class Component {
     constructor(props = {}) {
@@ -9,6 +10,21 @@ export default class Component {
     setState(newState) {
         this.state = { ...this.state, ...newState };
         this.update();
+    }
+
+    validateProps(data) {
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                let type = data[key];
+                if (validator.hasOwnProperty(type)) {
+                    if (!validator[type](this.props[key])) {
+                        console.error(`Validation failed for prop ${key}. Expected type ${type}.`);
+                    }
+                } else {
+                    console.error(`Unknown validator type ${type} for prop ${key}.`);
+                }
+            }
+        }
     }
 
     update() {

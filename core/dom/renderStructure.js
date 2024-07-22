@@ -1,5 +1,3 @@
-import { propsTypes, validateStructure } from '../typeCheck.js'
-
 export function renderStructure(structure) {
     if (structure.type === 'TEXT_NODE') {
         return document.createTextNode(structure.content);
@@ -15,8 +13,6 @@ export function renderStructure(structure) {
     }
 
     if (structure.props) {
-        validateStructure(structure.props, propsTypes);
-
         for (const propName in structure.props) {
             if (propName === 'style') {
                 Object.assign(element.style, structure.props[propName]);

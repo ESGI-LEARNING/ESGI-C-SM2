@@ -35,9 +35,6 @@ export class EventDetails extends JoDOM.Component {
                 Header,
                 {
                     type: 'main',
-                    props: {
-                        class: '',
-                    },
                     children: [
                         BrowserLink({
                             to: '/events',
@@ -64,9 +61,6 @@ export class EventDetails extends JoDOM.Component {
                                             children: [
                                                 {
                                                     type: 'div',
-                                                    props: {
-                                                        class: '',
-                                                    },
                                                     children: [
                                                         JoDOM.createElement(
                                                             Text,

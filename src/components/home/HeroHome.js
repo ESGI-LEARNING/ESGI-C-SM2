@@ -4,6 +4,7 @@ export default class HeroHome extends JoDOM.Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         return {
             type: 'section',

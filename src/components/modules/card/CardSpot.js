@@ -7,6 +7,15 @@ export default class CardsSpots extends JoDOM.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentDidMount() {
+        this.validateProps({
+            name: 'string',
+            description: 'string',
+            latitude: 'number',
+            longitude: 'number',
+        });
+    }
+
     handleClick(event) {
         event.preventDefault();
         this.activateMarkerPopup();

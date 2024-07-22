@@ -5,6 +5,13 @@ export default class Text extends JoDOM.Component {
         this.state = {};
     }
 
+    componentDidMount() {
+        this.validateProps({
+            type: 'string',
+            content: 'string',
+        });
+    }
+
     render() {
         return {
             type: this.props.type,

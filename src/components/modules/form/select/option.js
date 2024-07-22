@@ -4,8 +4,15 @@ export default class Option extends JoDOM.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.validateProps({
+            value: 'string',
+            children: 'string',
+        });
+    }
+
     render() {
-        const { value, children, selected } = this.props;
+        const { value, children } = this.props;
         return {
             type: 'option',
             props: {

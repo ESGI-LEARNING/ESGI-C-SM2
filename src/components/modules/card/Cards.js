@@ -4,8 +4,19 @@ export default class Cards extends JoDOM.Component {
         super(props);
     }
 
+    componentDidMount() {
+        this.validateProps({
+            id: 'number',
+            title: 'string',
+            description: 'string',
+            category: 'object',
+            startDate: 'string',
+            image: 'string',
+        });
+    }
+
     render() {
-        const { title, description, category, startDate, endDate, id, image } =
+        const { title, description, category, startDate, id, image } =
             this.props;
         return {
             type: 'li',

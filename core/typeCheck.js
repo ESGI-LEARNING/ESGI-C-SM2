@@ -1,9 +1,9 @@
+
 function validateStructure(props, propTypes) {
     Object.keys(propTypes).forEach(key => {
         const validator = propTypes[key];
-
         if (!validator(props[key])) {
-            console.error(`Validation a eu une erreur pour la prop ${key}. Sur le type ${validator.name}.`);
+            console.error(`Validation failed for prop ${key}. Expected type ${validator.name}.`);
         }
     });
 }
@@ -18,19 +18,4 @@ const validator = {
     required: value => value !== null && value !== undefined,
 };
 
-const propsTypes = {
-    styles: validator.object,
-    href: validator.string,
-    class: validator.string,
-    value: validator.string || validator.number,
-    src: validator.string,
-    alt: validator.string,
-    loading: validator.string,
-    for: validator.string,
-    id: validator.string,
-    name: validator.string,
-    required: validator.boolean,
-    type: validator.string,
-}
-
-export { validator, validateStructure, propsTypes };
+export { validator, validateStructure };

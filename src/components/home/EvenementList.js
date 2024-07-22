@@ -4,8 +4,9 @@ import Cards from '../modules/card/Cards.js';
 import './../../../assets/js/components/carousel.js';
 
 export default class EvenementList extends JoDOM.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+
         this.state = {
             events: [],
         };
@@ -21,6 +22,7 @@ export default class EvenementList extends JoDOM.Component {
 
     render() {
         const { events } = this.state;
+
         return {
             type: 'section',
             props: {
