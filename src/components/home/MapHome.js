@@ -1,12 +1,12 @@
-import { Cta } from '../BrowserRouter.js';
+import { Cta } from '../core/BrowserRouter.js';
 import JoDOM from '../../../core/dom/JoDOM.js';
-import { Leaflet } from '../leaflet/leaflet.js';
+import { Leaflet } from '../../tools/leaflet/leaflet.js';
 export default class mapHome extends JoDOM.Component {
     constructor(props) {
         super(props);
         this.state = {
             initMap: false,
-        }
+        };
     }
 
     componentDidMount() {
@@ -15,9 +15,12 @@ export default class mapHome extends JoDOM.Component {
             navigator.geolocation.getCurrentPosition((position) => {
                 const { latitude, longitude } = position.coords;
                 const map = L.map('map').setView([48.8566, 2.3522], 12);
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '© OpenStreetMap contributors',
-                }).addTo(map);
+                L.tileLayer(
+                    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                    {
+                        attribution: '© OpenStreetMap contributors',
+                    },
+                ).addTo(map);
                 map.setView([latitude, longitude], 12);
                 let customIcon = L.icon({
                     iconUrl:
@@ -26,20 +29,36 @@ export default class mapHome extends JoDOM.Component {
                     iconAnchor: [12, 41],
                     popupAnchor: [1, -34],
                 });
-                L.marker([latitude, longitude], { icon: customIcon }).addTo(map).bindPopup('Vous êtes ici').openPopup();
+                L.marker([latitude, longitude], { icon: customIcon })
+                    .addTo(map)
+                    .bindPopup('Vous êtes ici')
+                    .openPopup();
 
-                fetch(`https://api-esgi.faispaschier.fr/spots/?longitude=${longitude}&latitude=${latitude}`, {
-                    method: 'GET',
-                })
+                fetch(
+                    `https://api-esgi.faispaschier.fr/spots/?longitude=${longitude}&latitude=${latitude}`,
+                    {
+                        method: 'GET',
+                    },
+                )
                     .then((response) => response.json())
                     .then((data) => {
                         data.forEach((event) => {
                             L.marker([event.latitude, event.longitude])
                                 .addTo(map)
-                                .bindPopup(`<b>${event.name}</b><br>${event.description}`)
-                                .on('click', function () {
-                                    history.pushState(null, null, `/events/${event.evenementId}`);
-                                }, { autoClose: false });
+                                .bindPopup(
+                                    `<b>${event.name}</b><br>${event.description}`,
+                                )
+                                .on(
+                                    'click',
+                                    function () {
+                                        history.pushState(
+                                            null,
+                                            null,
+                                            `/events/${event.evenementId}`,
+                                        );
+                                    },
+                                    { autoClose: false },
+                                );
                         });
                     });
             });

@@ -1,4 +1,4 @@
-import JoDOM from '../../../core/dom/JoDOM.js';
+import JoDOM from '../../../../core/dom/JoDOM.js';
 export default class Cards extends JoDOM.Component {
     constructor(props) {
         super(props);

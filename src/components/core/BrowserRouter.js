@@ -1,7 +1,7 @@
-import { renderStructure } from '../../core/dom/renderStructure.js';
-import JoDOM from '../../core/dom/JoDOM.js';
-import isClassComponent from '../../core/utils/type.js';
-import NotFound from '../pages/404.js';
+import { renderStructure } from '../../../core/dom/renderStructure.js';
+import JoDOM from '../../../core/dom/JoDOM.js';
+import isClassComponent from '../../../core/utils/type.js';
+import NotFound from '../../pages/404.js';
 
 const BrowserRouter = function (routes, rootElement) {
     const matchRoute = (pathname) => {

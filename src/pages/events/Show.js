@@ -1,10 +1,10 @@
-import { Header } from '../../components/header.js';
-import { Footer } from '../../components/footer.js';
-import { Leaflet } from '../../components/leaflet/leaflet.js';
+import { Header } from '../../components/layouts/Header.js';
+import { Footer } from '../../components/layouts/Footer.js';
+import { Leaflet } from '../../tools/leaflet/leaflet.js';
 import JoDOM from '../../../core/dom/JoDOM.js';
-import Text from '../../components/section/text.js';
-import CardsSpots from '../../components/section/cardSpot.js';
-import { BrowserLink } from '../../components/BrowserRouter.js';
+import Text from '../../components/section/Text.js';
+import CardsSpots from '../../components/modules/card/CardSpot.js';
+import { BrowserLink } from '../../components/core/BrowserRouter.js';
 
 export class EventDetails extends JoDOM.Component {
     constructor(props) {

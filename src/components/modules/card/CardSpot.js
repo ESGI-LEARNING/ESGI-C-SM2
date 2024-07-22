@@ -1,6 +1,6 @@
-import JoDOM from '../../../core/dom/JoDOM.js';
-import Text from '../section/text.js';
-import { exportMap } from '../leaflet/leafletConfig.js';
+import JoDOM from '../../../../core/dom/JoDOM.js';
+import Text from '../../section/Text.js';
+import { exportMap } from '../../../tools/leaflet/leafletConfig.js';
 export default class CardsSpots extends JoDOM.Component {
     constructor(props) {
         super(props);

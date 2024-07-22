@@ -1,4 +1,4 @@
-import '../../../node_modules/leaflet/dist/leaflet.js';
+import 'leaflet/dist/leaflet.js';
 
 let map = null;
 
@@ -16,15 +16,15 @@ export const initMap = () => {
                 popupAnchor: [1, -34],
             });
 
-            L.marker([latitude, longitude], { icon: customIcon }).addTo(map).bindPopup('Vous êtes ici');
+            L.marker([latitude, longitude], { icon: customIcon })
+                .addTo(map)
+                .bindPopup('Vous êtes ici');
         });
     }
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution:
             '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
-
-
 
     return map;
 };
