@@ -46,7 +46,7 @@ main {
   max-width: 124rem;
   margin: 0 auto;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 250rem) {
   main {
     padding: 0 2rem;
   }
@@ -576,6 +576,11 @@ header .burger-menu .burger-line {
   max-width: 144rem;
   min-height: 60vh;
 }
+@media screen and (max-width: 1200px) {
+  .hero-container {
+    justify-content: center;
+  }
+}
 .hero-container .hero-row {
   display: flex;
   gap: 3.5rem;
@@ -952,10 +957,15 @@ header .burger-menu .burger-line {
   }
 }
 .amuse-section {
-  margin-top: 10rem;
   max-width: 190rem;
   margin: 10rem auto 0 auto;
   flex-wrap: wrap;
+  gap: 0.5rem;
+}
+@media screen and (max-width: 1200px) {
+  .amuse-section {
+    justify-content: center;
+  }
 }
 .amuse-section h2 {
   color: var(--black);
@@ -1112,7 +1122,7 @@ header .burger-menu .burger-line {
 }
 
 .map-home {
-  max-width: 70rem !important;
+  max-width: 64rem !important;
   height: 44rem !important;
 }
 
