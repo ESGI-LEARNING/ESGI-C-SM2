@@ -18,7 +18,7 @@ const validator = {
     required: value => value !== null && value !== undefined,
 };
 
-export const propsTypes = {
+const propsTypes = {
     styles: validator.object,
     href: validator.string,
     class: validator.string,
