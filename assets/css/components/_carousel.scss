@@ -1,10 +1,23 @@
 .carousel-container {
     display: flex;
     gap: 3rem;
-    overflow: auto;
+    overflow-x: auto; 
+    overflow-y: hidden;
     position: relative;
     padding: 2rem 0;
-    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        height: 10px; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 5px; 
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+    }
 
     .carousel-row {
         display: flex;
@@ -13,10 +26,6 @@
         justify-content: space-between;
         user-select: none;
         cursor: grab;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
 
         &.active {
             cursor: grabbing;
