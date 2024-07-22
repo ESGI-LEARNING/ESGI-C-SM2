@@ -8,6 +8,10 @@
     max-width: 144rem;
     min-height: 60vh;
 
+    @media screen and (max-width: 1200px) {
+        justify-content: center;
+    }
+
     .hero-row {
         display: flex;
         gap: 3.5rem;

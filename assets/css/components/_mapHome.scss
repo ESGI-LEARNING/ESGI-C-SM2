@@ -1,8 +1,12 @@
 .amuse-section {
-    margin-top: 10rem;
     max-width: 190rem;
     margin: 10rem auto 0 auto;
     flex-wrap: wrap;
+    gap: .5rem;
+
+    @media screen and (max-width: 1200px) {
+        justify-content: center;
+    }
 
     h2 {
         color: var(--black);
