@@ -32,4 +32,6 @@ spec:
 
       containers:
         - name: tmeunier-esgi-app-jo
-          image: https://registry.exemple.fr
+          image: registry.lfremaux.fr/tmeunier/tmeunier-front-jo:1.0
+          ports:
+            - containerPort: 8080

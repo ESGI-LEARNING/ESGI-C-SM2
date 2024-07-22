@@ -52,7 +52,7 @@ export class Events extends JoDOM.Component {
         return {
             type: 'div',
             children: [
-                Header,
+                JoDOM.createElement(Header),
                 {
                     type: 'main',
                     children: [

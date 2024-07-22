@@ -14,7 +14,7 @@ export default class Home extends JoDOM.Component {
         return {
             type: 'div',
             children: [
-                Header,
+                JoDOM.createElement(Header),
                 {
                     type: 'main',
                     children: [

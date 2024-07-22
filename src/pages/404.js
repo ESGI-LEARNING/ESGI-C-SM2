@@ -12,7 +12,7 @@ export default class NotFound extends JoDOM.Component {
         return {
             type: 'div',
             children: [
-                Header,
+                JoDOM.createElement(Header),
                 {
                     type: 'main',
                     children: [

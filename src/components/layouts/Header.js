@@ -1,45 +1,59 @@
 import { LogoHome } from '../core/BrowserRouter.js';
-import { NavBar } from './NavBar.js';
-import { Burger } from '../../../assets/js/components/navbar.js';
+import JoDOM from '../../../core/dom/JoDOM.js'
+import NavBar from './NavBar.js'
 
-export const Header = {
-    type: 'header',
-    children: [
-        LogoHome({ to: '/', title: 'Home' }),
-        {
-            type: 'button',
-            props: {
-                class: 'burger-menu',
-            },
-            className: 'burger-menu',
+export class Header extends JoDOM.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            burger: false,
+        }
+    }
+
+    handleBurger(e) {
+        e.preventDefault();
+        this.setState({ burger: !this.state.burger });
+    }
+
+    render() {
+        const { burger } = this.state;
+        return {
+            type: 'header',
             children: [
+                LogoHome({ to: '/', title: 'Home' }),
                 {
-                    type: 'span',
+                    type: 'button',
                     props: {
-                        class: 'burger-line',
+                        class: 'burger-menu',
+                    },
+                    className: 'burger-menu',
+                    children: [
+                        {
+                            type: 'span',
+                            props: {
+                                class: 'burger-line',
+                            },
+                        },
+                        {
+                            type: 'span',
+                            props: {
+                                class: 'burger-line',
+                            },
+                        },
+                        {
+                            type: 'span',
+                            props: {
+                                class: 'burger-line',
+                            },
+                        },
+                    ],
+                    events: {
+                        click: [this.handleBurger],
                     },
                 },
-                {
-                    type: 'span',
-                    props: {
-                        class: 'burger-line',
-                    },
-                },
-                {
-                    type: 'span',
-                    props: {
-                        class: 'burger-line',
-                    },
-                },
+                JoDOM.createElement(NavBar, { burger: burger }),
             ],
-            events: {
-                click: [
-                    function () {
-                        Burger();
-                    },
-                ],
-            },
-        },
-        NavBar,
-    ],
-};
+        }
+    }
+}

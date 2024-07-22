@@ -12,7 +12,7 @@ export class Contact extends JoDOM.Component {
         return {
             type: 'div',
             children: [
-                Header,
+                JoDOM.createElement(Header),
                 {
                     type: 'main',
                     props: {

@@ -1,7 +1,5 @@
-import './../../../assets/js/components/carousel.js';
 import JoDOM from '../../../core/dom/JoDOM.js';
 import Cards from '../modules/card/Cards.js';
-import './../../../assets/js/components/carousel.js';
 
 export default class EvenementList extends JoDOM.Component {
     constructor(props) {
