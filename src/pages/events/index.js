@@ -97,10 +97,14 @@ export class Events extends JoDOM.Component {
                                                     ],
                                                 },
                                                 ...categories.map((category, index) =>
-                                                    JoDOM.createElement(Option, {
+                                                    c === category.name ? JoDOM.createElement(Option, {
                                                         key: index,
                                                         value: category.name,
-                                                        selected: category.name === c ? 'selected' : undefined,
+                                                        selected: 'selected',
+                                                        children: category.name,
+                                                    }) : JoDOM.createElement(Option, {
+                                                        key: index,
+                                                        value: category.name,
                                                         children: category.name,
                                                     }),
                                                 ),
