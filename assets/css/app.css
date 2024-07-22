@@ -912,10 +912,20 @@ header .burger-menu .burger-line {
 .carousel-container {
   display: flex;
   gap: 3rem;
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
   padding: 2rem 0;
-  scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+  height: 10px;
+}
+.carousel-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.carousel-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 .carousel-container .carousel-row {
   display: flex;
@@ -924,9 +934,6 @@ header .burger-menu .burger-line {
   justify-content: space-between;
   user-select: none;
   cursor: grab;
-}
-.carousel-container .carousel-row::-webkit-scrollbar {
-  display: none;
 }
 .carousel-container .carousel-row.active {
   cursor: grabbing;
