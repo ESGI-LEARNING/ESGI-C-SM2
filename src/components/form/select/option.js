@@ -5,11 +5,12 @@ export default class Option extends JoDOM.Component {
     }
 
     render() {
-        const { value, children } = this.props;
+        const { value, children, selected } = this.props;
         return {
             type: 'option',
             props: {
                 value: value,
+                selected: selected,
             },
             children: [
                 {

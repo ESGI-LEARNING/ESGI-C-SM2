@@ -1,14 +1,16 @@
 import { Header } from '../../components/header.js';
 import { Footer } from '../../components/footer.js';
-import FormFilter from '../../components/form/formFilter.js';
 import Cards from '../../components/section/cards.js';
 import JoDOM from '../../../core/dom/JoDOM.js';
+import Option from '../../components/form/select/option.js'
 
 export class Events extends JoDOM.Component {
     constructor(props) {
         super(props);
         this.state = {
             events: [],
+            categories: [],
+            category: null
         };
     }
 
@@ -18,10 +20,35 @@ export class Events extends JoDOM.Component {
         })
             .then((response) => response.json())
             .then((data) => this.setState({ events: data }));
+
+        // get all categories
+        fetch('https://api-esgi.faispaschier.fr/categories/', {
+            method: 'GET',
+        })
+            .then((response) => response.json())
+            .then((data) => this.setState({ categories: data }));
+    }
+
+    handleSelectEventWithCategory = (value) => {
+        let url;
+
+        if (value === 'category') {
+            url = 'https://api-esgi.faispaschier.fr/events';
+        } else {
+            url = `https://api-esgi.faispaschier.fr/events?category=${value}`;
+        }
+
+        fetch(url, {
+            method: 'GET',
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                this.setState({ events: data, category: value });
+            });
     }
 
     render() {
-        const { events } = this.state;
+        const { events, categories, category: c } = this.state;
         return {
             type: 'div',
             children: [
@@ -29,7 +56,60 @@ export class Events extends JoDOM.Component {
                 {
                     type: 'main',
                     children: [
-                        JoDOM.createElement(FormFilter),
+                        {
+                            type: 'div',
+                            props: {
+                                class: 'input-events',
+                            },
+                            children: [
+                                {
+                                    type: 'div',
+                                    props: {
+                                        class: 'input-select-container',
+                                    },
+                                    children: [
+                                        {
+                                            type: 'select',
+                                            props: {
+                                                class: 'input-select',
+                                                id: 'type',
+                                                name: 'type',
+                                            },
+                                            events: {
+                                                change: [
+                                                    (event) => {
+                                                        const { value } = event.target;
+                                                        this.handleSelectEventWithCategory(value);
+                                                    },
+                                                ]
+                                            },
+                                            children: [
+                                                {
+                                                    type: 'option',
+                                                    props: {
+                                                        value: 'category',
+                                                    },
+                                                    children: [
+                                                        {
+                                                            type: 'TEXT_NODE',
+                                                            content: 'category',
+                                                        },
+                                                    ],
+                                                },
+                                                ...categories.map((category, index) =>
+                                                    JoDOM.createElement(Option, {
+                                                        key: index,
+                                                        value: category.name,
+                                                        selected: category.name === c ? 'selected' : undefined,
+                                                        children: category.name,
+                                                    }),
+                                                ),
+                                            ],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
                         {
                             type: 'section',
                             props: {
