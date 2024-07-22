@@ -10,7 +10,6 @@ export default class Option extends JoDOM.Component {
             type: 'option',
             props: {
                 value: value,
-                selected: selected,
             },
             children: [
                 {
