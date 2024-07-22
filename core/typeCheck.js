@@ -1,96 +1,36 @@
-export default function type_check(variable, conf) {
-    const type = conf.type;
-    const value = conf.value;
-    const enumValues = conf.enum;
-    const properties = conf.properties;
+function validateStructure(props, propTypes) {
+    Object.keys(propTypes).forEach(key => {
+        const validator = propTypes[key];
 
-    function isEqual(obj1, obj2) {
-        if (Object.keys(obj1).length !== Object.keys(obj2).length) {
-            return false;
+        if (!validator(props[key])) {
+            console.error(`Validation a eu une erreur pour la prop ${key}. Sur le type ${validator.name}.`);
         }
-
-        for (const key in obj1) {
-            if (obj1[key] instanceof Object && obj2[key] instanceof Object) {
-                if (!isEqual(obj1[key], obj2[key])) {
-                    return false;
-                }
-            } else if (obj1[key] !== obj2[key]) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    if (type) {
-        if (type === 'object') {
-            if (variable === null || Array.isArray(variable)) {
-                return false;
-            }
-            if (typeof variable !== type) {
-                return false;
-            }
-
-            if (properties) {
-                let hasAllProperties = true;
-                let hasValidProperties = true;
-
-                for (const prop in properties) {
-                    if (!Object.prototype.hasOwnProperty.call(variable, prop)) {
-                        hasAllProperties = false;
-                    } else {
-                        if (!type_check(variable[prop], properties[prop])) {
-                            hasValidProperties = false;
-                        }
-                    }
-                }
-
-                return hasAllProperties && hasValidProperties;
-            }
-        } else if (type === 'array') {
-            if (!Array.isArray(variable)) {
-                return false;
-            }
-        } else if (type === 'null') {
-            if (variable !== null) {
-                return false;
-            }
-        } else {
-            if (typeof variable !== type) {
-                return false;
-            }
-        }
-    }
-
-    if (value !== undefined) {
-        if (typeof variable === 'object' && typeof value === 'object') {
-            if (!isEqual(variable, value)) {
-                return false;
-            }
-        } else if (variable !== value) {
-            return false;
-        }
-    }
-
-    if (enumValues !== undefined) {
-        let isInEnum = false;
-
-        for (const enumValue of enumValues) {
-            if (typeof variable === 'object' && typeof enumValue === 'object') {
-                if (isEqual(variable, enumValue)) {
-                    isInEnum = true;
-                    break;
-                }
-            } else if (variable === enumValue) {
-                isInEnum = true;
-                break;
-            }
-        }
-
-        if (!isInEnum) {
-            return false;
-        }
-    }
-
-    return true;
+    });
 }
+
+const validator = {
+    string: value => typeof value === 'string',
+    number: value => typeof value === 'number',
+    boolean: value => typeof value === 'boolean',
+    array: value => Array.isArray(value),
+    object: value => value !== null && typeof value === 'object',
+    function: value => typeof value === 'function',
+    required: value => value !== null && value !== undefined,
+};
+
+export const propsTypes = {
+    styles: validator.object,
+    href: validator.string,
+    class: validator.string,
+    value: validator.string || validator.number,
+    src: validator.string,
+    alt: validator.string,
+    loading: validator.string,
+    for: validator.string,
+    id: validator.string,
+    name: validator.string,
+    required: validator.boolean,
+    type: validator.string,
+}
+
+export { validator, validateStructure, propsTypes };

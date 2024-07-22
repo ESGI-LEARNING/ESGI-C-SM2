@@ -1,3 +1,5 @@
+import { propsTypes, validateStructure } from '../typeCheck.js'
+
 export function renderStructure(structure) {
     if (structure.type === 'TEXT_NODE') {
         return document.createTextNode(structure.content);
@@ -13,6 +15,8 @@ export function renderStructure(structure) {
     }
 
     if (structure.props) {
+        validateStructure(structure.props, propsTypes);
+
         for (const propName in structure.props) {
             if (propName === 'style') {
                 Object.assign(element.style, structure.props[propName]);
@@ -38,15 +42,6 @@ export function renderStructure(structure) {
                     element.addEventListener(eventName, eventListeners);
                 }
             }
-        }
-    }
-
-    if (structure.loop) {
-        const container = document.createElement('ul');
-        element.appendChild(container);
-        for (let i = 0; i < structure.loop.count; i++) {
-            const child = renderStructure(structure.loop.template);
-            container.appendChild(child);
         }
     }
 
