@@ -1,4 +1,4 @@
-import { renderStructure } from '../../core/dom/renderStructure.js';
+import { renderStructure } from '../../../core/dom/renderStructure.js';
 
 export default class Component {
     constructor(props = {}) {

@@ -1,8 +1,8 @@
-import { Header } from '../../components/header.js';
-import { Footer } from '../../components/footer.js';
-import Cards from '../../components/section/cards.js';
+import { Header } from '../../components/layouts/Header.js';
+import { Footer } from '../../components/layouts/Footer.js';
+import Cards from '../../components/modules/card/Cards.js';
 import JoDOM from '../../../core/dom/JoDOM.js';
-import Option from '../../components/form/select/option.js'
+import Option from '../../components/modules/form/select/option.js';
 
 export class Events extends JoDOM.Component {
     constructor(props) {
@@ -10,7 +10,7 @@ export class Events extends JoDOM.Component {
         this.state = {
             events: [],
             categories: [],
-            category: null
+            category: null,
         };
     }
 
@@ -45,7 +45,7 @@ export class Events extends JoDOM.Component {
             .then((data) => {
                 this.setState({ events: data, category: value });
             });
-    }
+    };
 
     render() {
         const { events, categories, category: c } = this.state;
@@ -78,10 +78,13 @@ export class Events extends JoDOM.Component {
                                             events: {
                                                 change: [
                                                     (event) => {
-                                                        const { value } = event.target;
-                                                        this.handleSelectEventWithCategory(value);
+                                                        const { value } =
+                                                            event.target;
+                                                        this.handleSelectEventWithCategory(
+                                                            value,
+                                                        );
                                                     },
-                                                ]
+                                                ],
                                             },
                                             children: [
                                                 {
@@ -96,17 +99,29 @@ export class Events extends JoDOM.Component {
                                                         },
                                                     ],
                                                 },
-                                                ...categories.map((category, index) =>
-                                                    c === category.name ? JoDOM.createElement(Option, {
-                                                        key: index,
-                                                        value: category.name,
-                                                        selected: 'selected',
-                                                        children: category.name,
-                                                    }) : JoDOM.createElement(Option, {
-                                                        key: index,
-                                                        value: category.name,
-                                                        children: category.name,
-                                                    }),
+                                                ...categories.map(
+                                                    (category, index) =>
+                                                        c === category.name
+                                                            ? JoDOM.createElement(
+                                                                  Option,
+                                                                  {
+                                                                      key: index,
+                                                                      value: category.name,
+                                                                      selected:
+                                                                          'selected',
+                                                                      children:
+                                                                          category.name,
+                                                                  },
+                                                              )
+                                                            : JoDOM.createElement(
+                                                                  Option,
+                                                                  {
+                                                                      key: index,
+                                                                      value: category.name,
+                                                                      children:
+                                                                          category.name,
+                                                                  },
+                                                              ),
                                                 ),
                                             ],
                                         },

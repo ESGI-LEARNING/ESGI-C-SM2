@@ -1,13 +1,13 @@
 @import '../../node_modules/leaflet/dist/leaflet.css';
 html {
-  font-size: 62.5%;
-  scroll-behavior: smooth;
-  font-family: "Olympic Sans", sans-serif;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: 'Olympic Sans', sans-serif;
 }
 
 body {
-  margin: 0;
-  color: var(--black);
+    margin: 0;
+    color: var(--black);
 }
 
 h1,
@@ -18,1302 +18,1306 @@ figure,
 ul,
 ol,
 section {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 a,
 button {
-  text-decoration: none;
-  padding: 0;
-  border: 0;
-  color: var(--black);
+    text-decoration: none;
+    padding: 0;
+    border: 0;
+    color: var(--black);
 }
 
 img {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 main {
-  max-width: 124rem;
-  margin: 0 auto;
+    max-width: 124rem;
+    margin: 0 auto;
 }
 @media screen and (max-width: 250rem) {
-  main {
-    padding: 0 2rem;
-  }
+    main {
+        padding: 0 2rem;
+    }
 }
 
 .half {
-  width: 50%;
+    width: 50%;
 }
 
 .m-1 {
-  margin: 1rem;
+    margin: 1rem;
 }
 
 .p-1 {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 .mt-1 {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .mr-1 {
-  margin-right: 1rem;
+    margin-right: 1rem;
 }
 
 .mb-1 {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .ml-1 {
-  margin-left: 1rem;
+    margin-left: 1rem;
 }
 
 .mx-1 {
-  margin: 0 1rem;
+    margin: 0 1rem;
 }
 
 .pt-1 {
-  padding-top: 1rem;
+    padding-top: 1rem;
 }
 
 .pr-1 {
-  padding-right: 1rem;
+    padding-right: 1rem;
 }
 
 .pb-1 {
-  padding-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
 .pl-1 {
-  padding-left: 1rem;
+    padding-left: 1rem;
 }
 
 .gap-1 {
-  gap: 1rem;
+    gap: 1rem;
 }
 
 .m-2 {
-  margin: 2rem;
+    margin: 2rem;
 }
 
 .p-2 {
-  padding: 2rem;
+    padding: 2rem;
 }
 
 .mt-2 {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .mr-2 {
-  margin-right: 2rem;
+    margin-right: 2rem;
 }
 
 .mb-2 {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .ml-2 {
-  margin-left: 2rem;
+    margin-left: 2rem;
 }
 
 .mx-2 {
-  margin: 0 2rem;
+    margin: 0 2rem;
 }
 
 .pt-2 {
-  padding-top: 2rem;
+    padding-top: 2rem;
 }
 
 .pr-2 {
-  padding-right: 2rem;
+    padding-right: 2rem;
 }
 
 .pb-2 {
-  padding-bottom: 2rem;
+    padding-bottom: 2rem;
 }
 
 .pl-2 {
-  padding-left: 2rem;
+    padding-left: 2rem;
 }
 
 .gap-2 {
-  gap: 2rem;
+    gap: 2rem;
 }
 
 .m-3 {
-  margin: 3rem;
+    margin: 3rem;
 }
 
 .p-3 {
-  padding: 3rem;
+    padding: 3rem;
 }
 
 .mt-3 {
-  margin-top: 3rem;
+    margin-top: 3rem;
 }
 
 .mr-3 {
-  margin-right: 3rem;
+    margin-right: 3rem;
 }
 
 .mb-3 {
-  margin-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .ml-3 {
-  margin-left: 3rem;
+    margin-left: 3rem;
 }
 
 .mx-3 {
-  margin: 0 3rem;
+    margin: 0 3rem;
 }
 
 .pt-3 {
-  padding-top: 3rem;
+    padding-top: 3rem;
 }
 
 .pr-3 {
-  padding-right: 3rem;
+    padding-right: 3rem;
 }
 
 .pb-3 {
-  padding-bottom: 3rem;
+    padding-bottom: 3rem;
 }
 
 .pl-3 {
-  padding-left: 3rem;
+    padding-left: 3rem;
 }
 
 .gap-3 {
-  gap: 3rem;
+    gap: 3rem;
 }
 
 .m-4 {
-  margin: 4rem;
+    margin: 4rem;
 }
 
 .p-4 {
-  padding: 4rem;
+    padding: 4rem;
 }
 
 .mt-4 {
-  margin-top: 4rem;
+    margin-top: 4rem;
 }
 
 .mr-4 {
-  margin-right: 4rem;
+    margin-right: 4rem;
 }
 
 .mb-4 {
-  margin-bottom: 4rem;
+    margin-bottom: 4rem;
 }
 
 .ml-4 {
-  margin-left: 4rem;
+    margin-left: 4rem;
 }
 
 .mx-4 {
-  margin: 0 4rem;
+    margin: 0 4rem;
 }
 
 .pt-4 {
-  padding-top: 4rem;
+    padding-top: 4rem;
 }
 
 .pr-4 {
-  padding-right: 4rem;
+    padding-right: 4rem;
 }
 
 .pb-4 {
-  padding-bottom: 4rem;
+    padding-bottom: 4rem;
 }
 
 .pl-4 {
-  padding-left: 4rem;
+    padding-left: 4rem;
 }
 
 .gap-4 {
-  gap: 4rem;
+    gap: 4rem;
 }
 
 .m-5 {
-  margin: 5rem;
+    margin: 5rem;
 }
 
 .p-5 {
-  padding: 5rem;
+    padding: 5rem;
 }
 
 .mt-5 {
-  margin-top: 5rem;
+    margin-top: 5rem;
 }
 
 .mr-5 {
-  margin-right: 5rem;
+    margin-right: 5rem;
 }
 
 .mb-5 {
-  margin-bottom: 5rem;
+    margin-bottom: 5rem;
 }
 
 .ml-5 {
-  margin-left: 5rem;
+    margin-left: 5rem;
 }
 
 .mx-5 {
-  margin: 0 5rem;
+    margin: 0 5rem;
 }
 
 .pt-5 {
-  padding-top: 5rem;
+    padding-top: 5rem;
 }
 
 .pr-5 {
-  padding-right: 5rem;
+    padding-right: 5rem;
 }
 
 .pb-5 {
-  padding-bottom: 5rem;
+    padding-bottom: 5rem;
 }
 
 .pl-5 {
-  padding-left: 5rem;
+    padding-left: 5rem;
 }
 
 .gap-5 {
-  gap: 5rem;
+    gap: 5rem;
 }
 
 .flex {
-  display: flex;
+    display: flex;
 }
 .flex-center {
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 .flex-between {
-  justify-content: space-between;
-  align-items: center;
+    justify-content: space-between;
+    align-items: center;
 }
 .flex-around {
-  justify-content: space-around;
-  align-items: center;
+    justify-content: space-around;
+    align-items: center;
 }
 .flex-start {
-  justify-content: flex-start;
-  align-items: center;
+    justify-content: flex-start;
+    align-items: center;
 }
 .flex-end {
-  justify-content: flex-end;
-  align-items: center;
+    justify-content: flex-end;
+    align-items: center;
 }
 .flex-col {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .d-none {
-  display: none;
+    display: none;
 }
 
 .d-block {
-  display: block;
+    display: block;
 }
 
 @font-face {
-  font-family: "Olympic Headline";
-  src: url("./../../assets/fonts/OlympicHeadline-Regular.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Olympic Headline';
+    src: url('./../../assets/fonts/OlympicHeadline-Regular.woff2')
+        format('woff2');
+    font-weight: bold;
+    font-style: normal;
 }
 @font-face {
-  font-family: "Olympic Headline";
-  src: url("./../../assets/fonts/OlympicHeadline-RegularItalic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
+    font-family: 'Olympic Headline';
+    src: url('./../../assets/fonts/OlympicHeadline-RegularItalic.woff2')
+        format('woff2');
+    font-weight: normal;
+    font-style: italic;
 }
 @font-face {
-  font-family: "Olympic Sans";
-  src: url("./../../assets/fonts/OlympicSans-Bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Olympic Sans';
+    src: url('./../../assets/fonts/OlympicSans-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
 }
 @font-face {
-  font-family: "Olympic Sans";
-  src: url("./../../assets/fonts/OlympicSans-BoldItalic.woff2") format("woff2");
-  font-weight: bold;
-  font-style: italic;
+    font-family: 'Olympic Sans';
+    src: url('./../../assets/fonts/OlympicSans-BoldItalic.woff2')
+        format('woff2');
+    font-weight: bold;
+    font-style: italic;
 }
 @font-face {
-  font-family: "Olympic Sans";
-  src: url("./../../assets/fonts/OlympicSans-Italic.woff2") format("woff2");
-  font-weight: normal;
-  font-style: italic;
+    font-family: 'Olympic Sans';
+    src: url('./../../assets/fonts/OlympicSans-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
 }
 @font-face {
-  font-family: "Olympic Sans";
-  src: url("./../../assets/fonts/OlympicSans-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Olympic Sans';
+    src: url('./../../assets/fonts/OlympicSans-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
 }
 @font-face {
-  font-family: "Olympic Sans";
-  src: url("./../../assets/fonts/OlympicSans-MediumItalic.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
+    font-family: 'Olympic Sans';
+    src: url('./../../assets/fonts/OlympicSans-MediumItalic.woff2')
+        format('woff2');
+    font-weight: 500;
+    font-style: italic;
 }
 @font-face {
-  font-family: "Olympic Sans";
-  src: url("./../../assets/fonts/OlympicSans.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Olympic Sans';
+    src: url('./../../assets/fonts/OlympicSans.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 .cta {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border: 0;
-  background-color: #0078d0;
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  max-width: fit-content;
-  text-transform: uppercase;
-  transition: background-color 0.3s;
-  font-family: "Olympic Headline", sans-serif;
-  cursor: pointer;
-  border-radius: 2rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 0;
+    background-color: #0078d0;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+    max-width: fit-content;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    font-family: 'Olympic Headline', sans-serif;
+    cursor: pointer;
+    border-radius: 2rem;
 }
 .cta:hover {
-  background-color: #0049AA;
+    background-color: #0049aa;
 }
 
 footer {
-  background-color: #00287f;
-  margin-top: 10rem;
+    background-color: #00287f;
+    margin-top: 10rem;
 }
 footer .bg-footer {
-  max-width: 144rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4rem 8rem;
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  text-align: center;
+    max-width: 144rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 8rem;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
 }
 footer .logo-footer {
-  width: 18rem;
+    width: 18rem;
 }
 footer p {
-  position: relative;
-  font-weight: bolder;
-  font-size: 1.6rem;
+    position: relative;
+    font-weight: bolder;
+    font-size: 1.6rem;
 }
 footer p::before {
-  content: url("../images/mascotte-footer.png");
-  position: absolute;
-  transform: translate(-65%, -70%);
-  width: 20rem;
-  height: 24rem;
-  object-fit: cover;
+    content: url('../images/mascotte-footer.png');
+    position: absolute;
+    transform: translate(-65%, -70%);
+    width: 20rem;
+    height: 24rem;
+    object-fit: cover;
 }
 footer ul {
-  display: flex;
-  gap: 2.5rem;
-  list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
 }
 footer ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 footer ul li a img {
-  width: 2.6rem;
-  object-fit: contain;
+    width: 2.6rem;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
-  footer .bg-footer {
-    flex-direction: column;
-  }
-  footer p {
-    margin-bottom: 4rem;
-  }
-  footer .logo-footer {
-    display: none;
-  }
-  footer p::before {
-    position: absolute;
-    transform: translate(-225%, -255%);
-    width: 5rem;
-    height: 6rem;
-    object-fit: cover;
-  }
+    footer .bg-footer {
+        flex-direction: column;
+    }
+    footer p {
+        margin-bottom: 4rem;
+    }
+    footer .logo-footer {
+        display: none;
+    }
+    footer p::before {
+        position: absolute;
+        transform: translate(-225%, -255%);
+        width: 5rem;
+        height: 6rem;
+        object-fit: cover;
+    }
 }
 header {
-  padding: 2rem 10rem;
-  max-width: 144rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    padding: 2rem 10rem;
+    max-width: 144rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 header img {
-  max-width: 8rem;
+    max-width: 8rem;
 }
 header nav ul {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
 }
 header nav ul li {
-  list-style: none;
+    list-style: none;
 }
 header nav ul li a {
-  text-decoration: none;
-  color: #000;
-  font-family: "Olympic Headline", sans-serif;
-  font-size: 2.4rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-transform: uppercase;
-  transition: color 0.3s;
+    text-decoration: none;
+    color: #000;
+    font-family: 'Olympic Headline', sans-serif;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    transition: color 0.3s;
 }
 header .burger-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 10;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
 }
 header .burger-menu .burger-line {
-  width: 2rem;
-  height: 0.25rem;
-  background: #000;
-  border-radius: 10px;
-  transition: all 0.3s linear;
-  position: relative;
-  transform-origin: 1px;
+    width: 2rem;
+    height: 0.25rem;
+    background: #000;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
 }
 
 @media screen and (max-width: 768px) {
-  header {
-    padding: 2rem 5rem;
-  }
-  header img {
-    max-width: 6rem;
-  }
-  header .burger-menu {
-    display: flex;
-  }
-  header .burger-menu.open .burger-line {
-    background: #fff;
-  }
-  header .burger-menu.open .burger-line:first-child {
-    transform: rotate(45deg);
-  }
-  header .burger-menu.open .burger-line:nth-child(2) {
-    opacity: 0;
-    transform: translateX(20px);
-  }
-  header .burger-menu.open .burger-line:nth-child(3) {
-    transform: rotate(-45deg);
-  }
-  header nav {
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 300px;
-    background: #00287f;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-  }
-  header nav ul {
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 5rem;
-    height: 100%;
-  }
-  header nav ul li {
-    margin: 1rem 0;
-  }
-  header nav ul li a {
-    color: #fff;
-  }
-  header nav.open {
-    transform: translateX(0);
-  }
+    header {
+        padding: 2rem 5rem;
+    }
+    header img {
+        max-width: 6rem;
+    }
+    header .burger-menu {
+        display: flex;
+    }
+    header .burger-menu.open .burger-line {
+        background: #fff;
+    }
+    header .burger-menu.open .burger-line:first-child {
+        transform: rotate(45deg);
+    }
+    header .burger-menu.open .burger-line:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    header .burger-menu.open .burger-line:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+    header nav {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 300px;
+        background: #00287f;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    header nav ul {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 5rem;
+        height: 100%;
+    }
+    header nav ul li {
+        margin: 1rem 0;
+    }
+    header nav ul li a {
+        color: #fff;
+    }
+    header nav.open {
+        transform: translateX(0);
+    }
 }
 .hero-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5rem;
-  margin: 0 auto;
-  max-width: 144rem;
-  min-height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin: 0 auto;
+    max-width: 144rem;
+    min-height: 60vh;
 }
 @media screen and (max-width: 1200px) {
-  .hero-container {
-    justify-content: center;
-  }
+    .hero-container {
+        justify-content: center;
+    }
 }
 .hero-container .hero-row {
-  display: flex;
-  gap: 3.5rem;
-  flex-direction: column;
-  max-width: 60rem;
-  gap: 2rem;
+    display: flex;
+    gap: 3.5rem;
+    flex-direction: column;
+    max-width: 60rem;
+    gap: 2rem;
 }
 .hero-container .hero-row .hero-title {
-  font-family: "Olympic Headline", sans-serif;
-  font-size: 6.4rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 7.5rem;
-  color: #0078d0;
+    font-family: 'Olympic Headline', sans-serif;
+    font-size: 6.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 7.5rem;
+    color: #0078d0;
 }
 .hero-container .hero-row .hero-content {
-  font-size: 1.8rem;
-  font-weight: 500;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 .hero-container .hero-row img {
-  width: 100%;
-  height: 50rem;
-  object-fit: cover;
+    width: 100%;
+    height: 50rem;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 768px) {
-  .hero-container {
-    min-height: 40rem;
-  }
-  .hero-container .hero-row .hero-title {
-    font-size: 4.8rem;
-    line-height: 5.5rem;
-    text-align: center;
-  }
-  .hero-container .hero-row .hero-content {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-  .hero-container .hero-row img {
-    display: none;
-  }
-  .hero-container .hero-row .cta {
-    margin: 0 auto;
-  }
+    .hero-container {
+        min-height: 40rem;
+    }
+    .hero-container .hero-row .hero-title {
+        font-size: 4.8rem;
+        line-height: 5.5rem;
+        text-align: center;
+    }
+    .hero-container .hero-row .hero-content {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    .hero-container .hero-row img {
+        display: none;
+    }
+    .hero-container .hero-row .cta {
+        margin: 0 auto;
+    }
 }
 .contact-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .contact-main .contact-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .contact-main .contact-header .mascotte-contact {
-  height: 15rem;
-  width: auto;
-  margin-right: 4rem;
+    height: 15rem;
+    width: auto;
+    margin-right: 4rem;
 }
 .contact-main .contact-header .contact-title {
-  font-family: "Olympic Headline";
-  font-size: 64px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 75px;
-  max-width: 144rem;
-  margin: 0;
+    font-family: 'Olympic Headline';
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 75px;
+    max-width: 144rem;
+    margin: 0;
 }
 .contact-main .contact-info {
-  margin-top: 5rem;
+    margin-top: 5rem;
 }
 
 .contact-info {
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-  width: 100%;
-  margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+    margin: 2rem auto;
 }
 .contact-info .form-contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 120rem;
-  gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 120rem;
+    gap: 2rem;
 }
 .contact-info .form-contact .form-row {
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
 }
 .contact-info .form-contact .form-group {
-  width: 100%;
+    width: 100%;
 }
 .contact-info .form-contact .form-group label {
-  font-family: "Olympic Sans";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  color: var(--black);
-  margin-bottom: 1rem;
+    font-family: 'Olympic Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--black);
+    margin-bottom: 1rem;
 }
 .contact-info .form-contact .form-group input {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 5px;
-  font-family: "Olympic Sans";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 19px;
-  color: var(--black);
-  border: 1px solid rgb(132, 132, 132);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    font-family: 'Olympic Sans';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    color: var(--black);
+    border: 1px solid rgb(132, 132, 132);
 }
 .contact-info .form-contact .form-group textarea {
-  width: 100%;
-  height: 20rem;
-  padding: 1rem;
-  border: 1px solid rgb(132, 132, 132);
-  border-radius: 5px;
-  font-family: "Olympic Sans";
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 19px;
-  resize: none;
-  color: var(--black);
+    width: 100%;
+    height: 20rem;
+    padding: 1rem;
+    border: 1px solid rgb(132, 132, 132);
+    border-radius: 5px;
+    font-family: 'Olympic Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    resize: none;
+    color: var(--black);
 }
 .contact-info .form-contact .cta {
-  padding: 1rem 6rem;
-  margin-left: auto;
+    padding: 1rem 6rem;
+    margin-left: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .contact-main .contact-header .mascotte-contact {
-    height: 10rem;
-    width: auto;
-    margin-right: 0;
-  }
-  .contact-main .contact-header .contact-title {
-    font-size: 48px;
-    line-height: 56px;
-  }
+    .contact-main .contact-header .mascotte-contact {
+        height: 10rem;
+        width: auto;
+        margin-right: 0;
+    }
+    .contact-main .contact-header .contact-title {
+        font-size: 48px;
+        line-height: 56px;
+    }
 }
 .card {
-  background-color: #fff;
-  border-radius: 16px;
-  background: var(--white, #fff);
-  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.15);
-  width: 35rem;
-  height: auto;
+    background-color: #fff;
+    border-radius: 16px;
+    background: var(--white, #fff);
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.15);
+    width: 35rem;
+    height: auto;
 }
 .card img {
-  width: 100%;
-  height: 18rem;
-  object-fit: cover;
-  border-radius: 16px 16px 0 0;
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
 }
 .card .content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  justify-content: space-between;
-  min-height: 25rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-between;
+    min-height: 25rem;
 }
 .card .content h3 {
-  font-size: 2.4rem;
-  font-family: "Olympic Headline", sans-serif;
+    font-size: 2.4rem;
+    font-family: 'Olympic Headline', sans-serif;
 }
 .card .content p {
-  font-size: 1.6rem;
-  color: #333;
-  flex-grow: 1;
+    font-size: 1.6rem;
+    color: #333;
+    flex-grow: 1;
 }
 .card .content .pill {
-  background: var(--blue, #0078d0);
-  color: #fff;
-  padding: 0.5rem 2rem;
-  border-radius: 999px;
-  display: inline-block;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  font-family: "Olympic Sans", sans-serif;
-  width: fit-content;
+    background: var(--blue, #0078d0);
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-family: 'Olympic Sans', sans-serif;
+    width: fit-content;
 }
 .card .content time {
-  font-size: 1.2rem;
-  font-style: italic;
-  font-weight: 400;
-  line-height: normal;
-  color: #848484;
-  align-content: end;
-  width: fit-content;
-  margin-left: auto;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+    color: #848484;
+    align-content: end;
+    width: fit-content;
+    margin-left: auto;
 }
 
 @media screen and (max-width: 768px) {
-  .card {
-    width: 15rem;
-    height: auto;
-  }
-  .card img {
-    width: 100%;
-    height: 12rem;
-    object-fit: cover;
-    border-radius: 16px 16px 0 0;
-  }
-  .card p {
-    font-size: 10px;
-    color: #333;
-  }
-  .card h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
+    .card {
+        width: 15rem;
+        height: auto;
+    }
+    .card img {
+        width: 100%;
+        height: 12rem;
+        object-fit: cover;
+        border-radius: 16px 16px 0 0;
+    }
+    .card p {
+        font-size: 10px;
+        color: #333;
+    }
+    .card h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
 }
 .card-spot-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  position: absolute;
-  z-index: 999;
-  left: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 999;
+    left: 2rem;
 }
 @media screen and (max-width: 768px) {
-  .card-spot-container {
-    left: 0;
-    position: inherit;
-    z-index: 0;
-    width: 100%;
-    overflow: hidden;
-  }
+    .card-spot-container {
+        left: 0;
+        position: inherit;
+        z-index: 0;
+        width: 100%;
+        overflow: hidden;
+    }
 }
 .card-spot-container .card-spot-list {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-  height: 79vh;
-  overflow: scroll;
-  gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: 79vh;
+    overflow: scroll;
+    gap: 1rem;
 }
 @media screen and (max-width: 768px) {
-  .card-spot-container .card-spot-list {
-    flex-direction: row;
-    width: 40rem;
-    height: inherit;
-    min-height: 18rem;
-    overflow-x: scroll;
-  }
+    .card-spot-container .card-spot-list {
+        flex-direction: row;
+        width: 40rem;
+        height: inherit;
+        min-height: 18rem;
+        overflow-x: scroll;
+    }
 }
 .card-spot-container .card-spot-list .card-spot {
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  min-height: 12rem;
-  overflow: hidden;
-  display: flex;
-  margin: 1rem auto;
-  flex-direction: column;
-  align-items: center;
-  max-width: 37.3rem;
-  border-left: solid 1rem #0078d0;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 12rem;
+    overflow: hidden;
+    display: flex;
+    margin: 1rem auto;
+    flex-direction: column;
+    align-items: center;
+    max-width: 37.3rem;
+    border-left: solid 1rem #0078d0;
 }
 @media screen and (max-width: 768px) {
-  .card-spot-container .card-spot-list .card-spot {
-    flex-direction: row;
-    max-width: 100%;
-    height: 7.5rem;
-    overflow: visible;
-    width: 100%;
-    max-width: 100%;
-    min-width: 28rem;
-  }
+    .card-spot-container .card-spot-list .card-spot {
+        flex-direction: row;
+        max-width: 100%;
+        height: 7.5rem;
+        overflow: visible;
+        width: 100%;
+        max-width: 100%;
+        min-width: 28rem;
+    }
 }
 .card-spot-container .card-spot-list .card-spot .content {
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 .card-spot-container .card-spot-list .card-spot .content .title {
-  color: #000;
-  font-family: "Olympic Headline";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+    color: #000;
+    font-family: 'Olympic Headline';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 .card-spot-container .card-spot-list .card-spot .content .description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    flex-shrink: 0;
 }
 @media screen and (max-width: 768px) {
-  .card-spot-container .card-spot-list .card-spot .content .description {
-    font-size: 12px;
-  }
+    .card-spot-container .card-spot-list .card-spot .content .description {
+        font-size: 12px;
+    }
 }
 
 .card-list {
-  margin: 0 auto;
-  max-width: 144rem;
+    margin: 0 auto;
+    max-width: 144rem;
 }
 .card-list ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6rem;
-  padding: 1rem;
-  list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem;
+    padding: 1rem;
+    list-style: none;
 }
 @media screen and (max-width: 768px) {
-  .card-list ul {
-    gap: 1rem;
-  }
+    .card-list ul {
+        gap: 1rem;
+    }
 }
 
 .carousel-container {
-  display: flex;
-  gap: 3rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  position: relative;
-  padding: 2rem 0;
+    display: flex;
+    gap: 3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    padding: 2rem 0;
 }
 .carousel-container::-webkit-scrollbar {
-  height: 10px;
+    height: 10px;
 }
 .carousel-container::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+    background: #888;
+    border-radius: 5px;
 }
 .carousel-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
 .carousel-container .carousel-row {
-  display: flex;
-  flex-direction: row;
-  gap: 1.5rem;
-  justify-content: space-between;
-  user-select: none;
-  cursor: grab;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: space-between;
+    user-select: none;
+    cursor: grab;
 }
 .carousel-container .carousel-row.active {
-  cursor: grabbing;
+    cursor: grabbing;
 }
 @media screen and (max-width: 768px) {
-  .carousel-container .carousel-row .card {
-    width: 30rem;
-  }
+    .carousel-container .carousel-row .card {
+        width: 30rem;
+    }
 }
 
 .evenement-container {
-  max-width: 144rem;
-  margin: 0 auto;
+    max-width: 144rem;
+    margin: 0 auto;
 }
 .evenement-container h2 {
-  font-size: 6.4rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-family: "Olympic Headline", sans-serif;
+    font-size: 6.4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Olympic Headline', sans-serif;
 }
 
 @media screen and (max-width: 768px) {
-  .evenement-container h2 {
-    font-size: 4.8rem;
-    line-height: 5.5rem;
-    text-align: center;
-  }
+    .evenement-container h2 {
+        font-size: 4.8rem;
+        line-height: 5.5rem;
+        text-align: center;
+    }
 }
 .amuse-section {
-  max-width: 190rem;
-  margin: 10rem auto 0 auto;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+    max-width: 190rem;
+    margin: 10rem auto 0 auto;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 @media screen and (max-width: 1200px) {
-  .amuse-section {
-    justify-content: center;
-  }
+    .amuse-section {
+        justify-content: center;
+    }
 }
 .amuse-section h2 {
-  color: var(--black);
-  font-family: "Olympic Headline", sans-serif;
-  font-size: 64px;
-  text-align: center;
-  margin-bottom: 4rem;
+    color: var(--black);
+    font-family: 'Olympic Headline', sans-serif;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 4rem;
 }
 .amuse-section .amuse-title1 {
-  display: none;
+    display: none;
 }
 .amuse-section .amuse-title2 {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 .amuse-section p {
-  color: var(--black);
-  font-family: "Olympic Sans", sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 64px;
-  max-width: 50rem;
-  text-align: center;
+    color: var(--black);
+    font-family: 'Olympic Sans', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 64px;
+    max-width: 50rem;
+    text-align: center;
 }
 .amuse-section img {
-  max-height: 40rem;
-  max-width: 60rem;
-  gap: 0px;
-  border-radius: 1.6rem;
-  opacity: 0px;
+    max-height: 40rem;
+    max-width: 60rem;
+    gap: 0px;
+    border-radius: 1.6rem;
+    opacity: 0px;
 }
 .amuse-section .cta {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border: 0;
-  background-color: #0078d0;
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 500;
-  max-width: fit-content;
-  text-transform: uppercase;
-  transition: background-color 0.3s;
-  font-family: "Olympic Headline", sans-serif;
-  cursor: pointer;
-  border-radius: 2rem;
-  margin-left: 50%;
-  transform: translateX(-50%);
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 0;
+    background-color: #0078d0;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+    max-width: fit-content;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    font-family: 'Olympic Headline', sans-serif;
+    cursor: pointer;
+    border-radius: 2rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 .amuse-section .cta:hover {
-  background-color: #0049AA;
+    background-color: #0049aa;
 }
 
 @media screen and (max-width: 768px) {
-  .amuse-section h2 {
-    font-size: 4.8rem;
-    margin-bottom: 2rem;
-    margin: 0 auto;
-  }
-  .amuse-section .amuse-title2 {
-    display: none;
-  }
-  .amuse-section .amuse-title1 {
-    display: flex;
-    justify-content: center;
-  }
-  .amuse-section .map-container {
-    order: 2;
-    margin: 2rem 0;
-  }
-  .amuse-section p {
-    font-size: 1.6rem;
-    margin: 2rem auto;
-  }
+    .amuse-section h2 {
+        font-size: 4.8rem;
+        margin-bottom: 2rem;
+        margin: 0 auto;
+    }
+    .amuse-section .amuse-title2 {
+        display: none;
+    }
+    .amuse-section .amuse-title1 {
+        display: flex;
+        justify-content: center;
+    }
+    .amuse-section .map-container {
+        order: 2;
+        margin: 2rem 0;
+    }
+    .amuse-section p {
+        font-size: 1.6rem;
+        margin: 2rem auto;
+    }
 }
 .input-events {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  max-width: 124rem;
-  margin: 2rem auto;
-  padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 124rem;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 .input-events .input-search-container {
-  flex: 1;
-  font-family: "Olympic Sans";
-  font-size: 2.4rem;
+    flex: 1;
+    font-family: 'Olympic Sans';
+    font-size: 2.4rem;
 }
 .input-events .input-search-container .input-icon-wrapper {
-  position: relative;
-  width: 39rem;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  border: 1px solid #c9c9c9;
-  border-radius: 1.5rem;
+    position: relative;
+    width: 39rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid #c9c9c9;
+    border-radius: 1.5rem;
 }
 .input-events .input-search-container .input-icon-wrapper .search-icon {
-  margin-left: 1rem;
-  width: 2rem;
-  height: 2rem;
+    margin-left: 1rem;
+    width: 2rem;
+    height: 2rem;
 }
 .input-events .input-search-container .input-icon-wrapper .input-search {
-  flex: 1;
-  height: 100%;
-  padding-left: 1rem;
-  border: none;
-  outline: none;
-  border-radius: 1.5rem;
+    flex: 1;
+    height: 100%;
+    padding-left: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1.5rem;
 }
 .input-events .input-select-container {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    background-color: #fff;
 }
 .input-events .input-select-container .input-select {
-  flex: 1;
-  width: 26rem;
-  height: 5rem;
-  border: 1px solid #c9c9c9;
-  border-radius: 1.5rem;
-  padding: 0 1rem;
-  font-size: 2.4rem;
-  background-color: #fff;
+    flex: 1;
+    width: 26rem;
+    height: 5rem;
+    border: 1px solid #c9c9c9;
+    border-radius: 1.5rem;
+    padding: 0 1rem;
+    font-size: 2.4rem;
+    background-color: #fff;
 }
 
 @media screen and (max-width: 968px) {
-  .input-events {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .input-events .input-search-container {
-    width: 100%;
-  }
-  .input-events .input-search-container .input-icon-wrapper {
-    width: 100%;
-  }
-  .input-events .input-select-container {
-    width: 100%;
-  }
-  .input-events .input-select-container .input-select {
-    width: 100%;
-  }
+    .input-events {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .input-events .input-search-container {
+        width: 100%;
+    }
+    .input-events .input-search-container .input-icon-wrapper {
+        width: 100%;
+    }
+    .input-events .input-select-container {
+        width: 100%;
+    }
+    .input-events .input-select-container .input-select {
+        width: 100%;
+    }
 }
 #map {
-  height: 80vh;
-  width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  position: relative;
+    height: 80vh;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
 }
 
 .map-home {
-  max-width: 64rem !important;
-  height: 44rem !important;
+    max-width: 64rem !important;
+    height: 44rem !important;
 }
 
 .map-container {
-  margin: 3rem auto;
-  height: 80vh;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  overflow: clip;
+    margin: 3rem auto;
+    height: 80vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: clip;
 }
 @media screen and (max-width: 768px) {
-  .map-container {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 33rem;
-  }
+    .map-container {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 33rem;
+    }
 }
 
 .content-show {
-  margin: 2rem;
-  padding: 2rem;
-  border-radius: 8px;
-  max-width: 144rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 144rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .content-show h2 {
-  font-size: 6.4rem;
-  font-weight: bold;
-  font-family: "Olympic Headline", sans-serif;
+    font-size: 6.4rem;
+    font-weight: bold;
+    font-family: 'Olympic Headline', sans-serif;
 }
 .content-show p {
-  font-size: 16px;
-  color: #333;
-  max-width: 70rem;
+    font-size: 16px;
+    color: #333;
+    max-width: 70rem;
 }
 .content-show time {
-  font-size: 12px;
-  font-style: italic;
+    font-size: 12px;
+    font-style: italic;
 }
 .content-show .pill {
-  background: var(--blue, #0078d0);
-  color: #fff;
-  padding: 0.5rem 2rem;
-  border-radius: 999px;
-  display: inline-block;
-  margin-bottom: 1rem;
-  text-align: center;
-  font-family: "Olympic Headline", sans-serif;
-  font-size: 1.4rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+    background: var(--blue, #0078d0);
+    color: #fff;
+    padding: 0.5rem 2rem;
+    border-radius: 999px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Olympic Headline', sans-serif;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .content-show-info {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  gap: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 0.8rem;
 }
 
 @media screen and (max-width: 768px) {
-  .main-show {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .main-show .main-show-header {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 1rem;
-  }
-  .main-show .content-show {
-    flex-direction: column;
-    align-items: center;
-  }
-  .main-show .content-show h2 {
-    font-size: 4.8rem;
-    line-height: 5.5rem;
-    text-align: center;
-  }
-  .main-show .content-show p {
-    font-size: 16px;
-    color: #333;
-    display: flex;
-  }
+    .main-show {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .main-show .main-show-header {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
+    }
+    .main-show .content-show {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-show .content-show h2 {
+        font-size: 4.8rem;
+        line-height: 5.5rem;
+        text-align: center;
+    }
+    .main-show .content-show p {
+        font-size: 16px;
+        color: #333;
+        display: flex;
+    }
 }
 .leaflet-popup-content {
-  font-size: 1.6rem;
-  line-height: normal;
-  font-family: "Olympic Sans", sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+    font-size: 1.6rem;
+    line-height: normal;
+    font-family: 'Olympic Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 }
 .leaflet-popup-content b {
-  font-size: 1.6rem;
-  font-family: "Olympic Headline", sans-serif;
+    font-size: 1.6rem;
+    font-family: 'Olympic Headline', sans-serif;
 }
 .leaflet-popup-content .pill {
-  background-color: #0078d0;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  width: fit-content;
+    background-color: #0078d0;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    width: fit-content;
 }
 .leaflet-popup-content time {
-  font-size: 1.1rem;
-  color: #000;
+    font-size: 1.1rem;
+    color: #000;
 }
 
 .container-not-found {
-  min-height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 .container-not-found .title {
-  color: #000;
-  font-family: "Olympic Headline";
-  font-size: 12.8rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 7.5rem;
-  position: relative;
+    color: #000;
+    font-family: 'Olympic Headline';
+    font-size: 12.8rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 7.5rem;
+    position: relative;
 }
 @media screen and (max-width: 768px) {
-  .container-not-found .title {
-    font-size: 6.4rem;
-  }
+    .container-not-found .title {
+        font-size: 6.4rem;
+    }
 }
 .container-not-found .title::before {
-  content: url("../images/sustainable-games 1.png");
-  display: block;
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  top: -50%;
-  left: -75%;
-  transform: translate(-50%, -75%);
+    content: url('../images/sustainable-games 1.png');
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50%;
+    left: -75%;
+    transform: translate(-50%, -75%);
 }
 @media screen and (max-width: 768px) {
-  .container-not-found .title::before {
-    display: none;
-  }
+    .container-not-found .title::before {
+        display: none;
+    }
 }
 .container-not-found .subtitle {
-  color: #000;
-  font-family: "Olympic Headline";
-  font-size: 6.4rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 7.5rem;
+    color: #000;
+    font-family: 'Olympic Headline';
+    font-size: 6.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 7.5rem;
 }
 @media screen and (max-width: 768px) {
-  .container-not-found .subtitle {
-    font-size: 3.2rem;
-  }
+    .container-not-found .subtitle {
+        font-size: 3.2rem;
+    }
 }
 
 .breadcrumb {
-  font-size: 1.6rem;
-  font-family: "Olympic Headline", sans-serif;
-  margin: 2rem;
+    font-size: 1.6rem;
+    font-family: 'Olympic Headline', sans-serif;
+    margin: 2rem;
 }
 @media screen and (max-width: 768px) {
-  .breadcrumb {
-    margin: 0.5rem 0;
-  }
+    .breadcrumb {
+        margin: 0.5rem 0;
+    }
 }
 .breadcrumb::before {
-  content: "<";
-  margin: 0 1rem;
-  font-size: 1.6rem;
-  display: inline-block;
-  vertical-align: center;
-  font-family: "Olympic Headline", sans-serif;
+    content: '<';
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    display: inline-block;
+    vertical-align: center;
+    font-family: 'Olympic Headline', sans-serif;
 }
 
 /*# sourceMappingURL=app.css.map */

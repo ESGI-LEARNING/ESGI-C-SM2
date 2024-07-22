@@ -4,9 +4,6 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview",
         "format": "prettier --write .",
         "lint": "npx eslint .",
         "lint:fix": "npx eslint . --fix",
@@ -23,7 +20,6 @@
         "leaflet": "^1.9.4",
         "prettier": "3.2.5",
         "sass": "^1.77.6",
-        "sass-loader": "^14.2.1",
-        "vite": "^5.2.0"
+        "sass-loader": "^14.2.1"
     }
 }

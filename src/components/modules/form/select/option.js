@@ -1,4 +1,4 @@
-import JoDOM from '../../../../core/dom/JoDOM.js';
+import JoDOM from '../../../../../core/dom/JoDOM.js';
 export default class Option extends JoDOM.Component {
     constructor(props) {
         super(props);

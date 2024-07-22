@@ -1,4 +1,4 @@
-import { Cta } from '../BrowserRouter.js';
+import { Cta } from '../core/BrowserRouter.js';
 import JoDOM from '../../../core/dom/JoDOM.js';
 export default class HeroHome extends JoDOM.Component {
     constructor(props) {

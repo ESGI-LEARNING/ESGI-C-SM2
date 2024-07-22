@@ -1,6 +1,6 @@
-import { LogoHome } from './BrowserRouter.js';
-import { NavBar } from './navBar.js';
-import { Burger } from '../../assets/js/components/navbar.js';
+import { LogoHome } from '../core/BrowserRouter.js';
+import { NavBar } from './NavBar.js';
+import { Burger } from '../../../assets/js/components/navbar.js';
 
 export const Header = {
     type: 'header',

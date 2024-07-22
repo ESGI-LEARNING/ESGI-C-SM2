@@ -1,7 +1,7 @@
 import JoDOM from '../../core/dom/JoDOM.js';
-import { Cta } from '../components/BrowserRouter.js';
-import { Footer } from '../components/footer.js';
-import { Header } from '../components/header.js';
+import { Cta } from '../components/core/BrowserRouter.js';
+import { Footer } from '../components/layouts/Footer.js';
+import { Header } from '../components/layouts/Header.js';
 
 export default class NotFound extends JoDOM.Component {
     constructor(props) {
