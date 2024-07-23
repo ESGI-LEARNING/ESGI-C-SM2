@@ -10,7 +10,7 @@ export default class NavBar extends JoDOM.Component {
         return {
             type: 'nav',
             props: {
-                class: this.props.burger ?? 'open',
+                class: this.props.burger ? 'open' : '',
             },
             children: [
                 {

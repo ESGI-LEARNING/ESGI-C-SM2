@@ -4,11 +4,10 @@ import NavBar from './NavBar.js'
 
 export class Header extends JoDOM.Component {
     constructor(props) {
-        super(props)
-
+        super(props);
         this.state = {
             burger: false,
-        }
+        };
     }
 
     handleBurger(e) {
@@ -25,7 +24,7 @@ export class Header extends JoDOM.Component {
                 {
                     type: 'button',
                     props: {
-                        class: 'burger-menu',
+                        class: 'burger-menu ' + (burger ? 'open' : ''),
                     },
                     className: 'burger-menu',
                     children: [
@@ -49,7 +48,7 @@ export class Header extends JoDOM.Component {
                         },
                     ],
                     events: {
-                        click: [this.handleBurger],
+                        click: [this.handleBurger.bind(this)],
                     },
                 },
                 JoDOM.createElement(NavBar, { burger: burger }),
