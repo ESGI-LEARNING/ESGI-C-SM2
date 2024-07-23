@@ -40,6 +40,9 @@ export class Events extends JoDOM.Component {
         } else if (date) {
             url += '?date=' + date;
         }
+        if (category === 'category' && !date) {
+            url = 'https://api-esgi.faispaschier.fr/events';
+        }
 
         fetch(url, {
             method: 'GET',
@@ -97,7 +100,7 @@ export class Events extends JoDOM.Component {
                                                     children: [
                                                         {
                                                             type: 'TEXT_NODE',
-                                                            content: 'category',
+                                                            content: 'Toutes les catégories',
                                                         },
                                                     ],
                                                 },
