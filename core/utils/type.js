@@ -6,7 +6,8 @@ export default function isClassComponent(component) {
         component();
         return false;
     } catch (error) {
-        if (/^[C|c]lass constructor/.test(error.message)) {
+        const classRegex = /^class\s+\w+/;
+        if (classRegex.test(component.toString())) {
             return true;
         }
         return false;
