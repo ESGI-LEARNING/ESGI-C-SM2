@@ -33,33 +33,13 @@ export const Footer = {
                                 {
                                     type: 'a',
                                     props: {
-                                        href: 'https://www.facebook.com/',
+                                        href: 'https://www.twitter.com/',
                                     },
                                     children: [
                                         {
                                             type: 'img',
                                             props: {
                                                 src: '../../assets/images/icons/facebook.svg',
-                                                alt: 'facebook',
-                                            },
-                                        },
-                                    ],
-                                },
-                            ],
-                        },
-                        {
-                            type: 'li',
-                            children: [
-                                {
-                                    type: 'a',
-                                    props: {
-                                        href: 'https://www.instagram.com/',
-                                    },
-                                    children: [
-                                        {
-                                            type: 'img',
-                                            props: {
-                                                src: '../../assets/images/icons/instagram.svg',
                                                 alt: 'instagram',
                                             },
                                         },
@@ -73,7 +53,28 @@ export const Footer = {
                                 {
                                     type: 'a',
                                     props: {
-                                        href: 'https://www.twitter.com/',
+                                        href: 'https://www.facebook.com/',
+                                    },
+                                    children: [
+                                        {
+                                            type: 'img',
+                                            props: {
+                                                src: '../../assets/images/icons/instagram.svg',
+                                                alt: 'facebook',
+                                            },
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+    
+                        {
+                            type: 'li',
+                            children: [
+                                {
+                                    type: 'a',
+                                    props: {
+                                        href: 'https://www.instagram.com/',
                                     },
                                     children: [
                                         {
