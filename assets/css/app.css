@@ -809,6 +809,7 @@ header .burger-menu .burger-line {
   position: absolute;
   z-index: 999;
   left: 2rem;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .card-spot-container {
