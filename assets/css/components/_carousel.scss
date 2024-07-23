@@ -26,6 +26,7 @@
         justify-content: space-between;
         user-select: none;
         cursor: grab;
+        padding: 0 1rem;
 
         &.active {
             cursor: grabbing;

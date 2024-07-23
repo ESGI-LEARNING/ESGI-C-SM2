@@ -1,17 +1,17 @@
 .card-list {
     margin: 0 auto;
-    max-width: 144rem;
+    max-width: 124rem;
 
     ul {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 6rem;
-        padding: 1rem;
+        padding: 1rem 0;
         list-style: none;
 
         @media screen and (max-width: 768px) {
-            gap: 1rem;
+            gap: .8rem;
         }
     }
 }
