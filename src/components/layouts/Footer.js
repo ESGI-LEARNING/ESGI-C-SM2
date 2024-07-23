@@ -39,8 +39,8 @@ export const Footer = {
                                         {
                                             type: 'img',
                                             props: {
-                                                src: '../../assets/images/icons/facebook.svg',
-                                                alt: 'instagram',
+                                                src: '../../assets/images/icons/twitter.svg',
+                                                alt: 'twitter',
                                             },
                                         },
                                     ],
@@ -59,7 +59,7 @@ export const Footer = {
                                         {
                                             type: 'img',
                                             props: {
-                                                src: '../../assets/images/icons/instagram.svg',
+                                                src: '../../assets/images/icons/facebook.svg',
                                                 alt: 'facebook',
                                             },
                                         },
@@ -67,7 +67,6 @@ export const Footer = {
                                 },
                             ],
                         },
-    
                         {
                             type: 'li',
                             children: [
@@ -80,8 +79,8 @@ export const Footer = {
                                         {
                                             type: 'img',
                                             props: {
-                                                src: '../../assets/images/icons/twitter.svg',
-                                                alt: 'twitter',
+                                                src: '../../assets/images/icons/instagram.svg',
+                                                alt: 'instagram',
                                             },
                                         },
                                     ],
