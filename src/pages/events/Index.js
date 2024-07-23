@@ -11,6 +11,7 @@ export class Events extends JoDOM.Component {
             events: [],
             categories: [],
             category: null,
+            date: null,
         };
     }
 
@@ -29,13 +30,15 @@ export class Events extends JoDOM.Component {
             .then((data) => this.setState({ categories: data }));
     }
 
-    handleSelectEventWithCategory = (value) => {
-        let url;
+    handleSelectEventWithCategory = (category, date) => {
+        let url = 'https://api-esgi.faispaschier.fr/events';
 
-        if (value === 'category') {
-            url = 'https://api-esgi.faispaschier.fr/events';
-        } else {
-            url = `https://api-esgi.faispaschier.fr/events?category=${value}`;
+        if (category && date) {
+            url += '?category=' + category + '&date=' + date;
+        } else if (category) {
+            url += '?category=' + category;
+        } else if (date) {
+            url += '?date=' + date;
         }
 
         fetch(url, {
@@ -43,12 +46,12 @@ export class Events extends JoDOM.Component {
         })
             .then((response) => response.json())
             .then((data) => {
-                this.setState({ events: data, category: value });
+                this.setState({ events: data, category: category, date: date });
             });
     };
 
     render() {
-        const { events, categories, category: c } = this.state;
+        const { events, categories, category: c, date: d } = this.state;
         return {
             type: 'div',
             children: [
@@ -78,11 +81,10 @@ export class Events extends JoDOM.Component {
                                             events: {
                                                 change: [
                                                     (event) => {
-                                                        const { value } =
-                                                            event.target;
-                                                        this.handleSelectEventWithCategory(
-                                                            value,
-                                                        );
+                                                        const { value } = event.target;
+                                                        const selectedCategory = value;
+                                                        const selectedDate = this.state.date;
+                                                        this.handleSelectEventWithCategory(selectedCategory, selectedDate);
                                                     },
                                                 ],
                                             },
@@ -103,27 +105,47 @@ export class Events extends JoDOM.Component {
                                                     (category, index) =>
                                                         c === category.name
                                                             ? JoDOM.createElement(
-                                                                  Option,
-                                                                  {
-                                                                      key: index,
-                                                                      value: category.name,
-                                                                      selected:
-                                                                          'selected',
-                                                                      children:
-                                                                          category.name,
-                                                                  },
-                                                              )
+                                                                Option,
+                                                                {
+                                                                    key: index,
+                                                                    value: category.name,
+                                                                    selected:
+                                                                        'selected',
+                                                                    children:
+                                                                        category.name,
+                                                                },
+                                                            )
                                                             : JoDOM.createElement(
-                                                                  Option,
-                                                                  {
-                                                                      key: index,
-                                                                      value: category.name,
-                                                                      children:
-                                                                          category.name,
-                                                                  },
-                                                              ),
+                                                                Option,
+                                                                {
+                                                                    key: index,
+                                                                    value: category.name,
+                                                                    children:
+                                                                        category.name,
+                                                                },
+                                                            ),
                                                 ),
                                             ],
+                                        },
+                                        {
+                                            type: 'input',
+                                            props: {
+                                                type: 'date',
+                                                class: 'input-date',
+                                                name: 'date',
+                                                value: d ?? '',
+                                            },
+                                            events: {
+                                                change: [
+                                                    (event) => {
+                                                        const { value } = event.target;
+                                                        const selectedCategory = this.state.category;
+                                                        const selectedDate = value;
+                                                        this.handleSelectEventWithCategory(selectedCategory, selectedDate);
+                                                        this.setState({ date: value });
+                                                    },
+                                                ],
+                                            },
                                         },
                                     ],
                                 },
