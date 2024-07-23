@@ -32,16 +32,21 @@ export class Events extends JoDOM.Component {
 
     handleSelectEventWithCategory = (category, date) => {
         let url = 'https://api-esgi.faispaschier.fr/events';
+        let query = '';
 
-        if (category && date) {
-            url += '?category=' + category + '&date=' + date;
-        } else if (category) {
-            url += '?category=' + category;
-        } else if (date) {
-            url += '?date=' + date;
+        if (category && category !== 'category') {
+            query += 'category=' + category;
         }
-        if (category === 'category' && !date) {
-            url = 'https://api-esgi.faispaschier.fr/events';
+
+        if (date) {
+            if (query) {
+                query += '&';
+            }
+            query += 'date=' + date;
+        }
+
+        if (query) {
+            url += '?' + query;
         }
 
         fetch(url, {
