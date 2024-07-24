@@ -17,7 +17,7 @@ export class EventDetails extends JoDOM.Component {
     }
 
     componentDidMount() {
-        fetch(`https://api-esgi.faispaschier.fr/events/${this.props.id}`, {
+        fetch(`https://api-esgi.theomeunier.fr/events/${this.props.id}`, {
             method: 'GET',
         })
             .then((response) => response.json())

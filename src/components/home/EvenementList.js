@@ -11,7 +11,7 @@ export default class EvenementList extends JoDOM.Component {
     }
 
     componentDidMount() {
-        fetch('https://api-esgi.faispaschier.fr/events', {
+        fetch('https://api-esgi.theomeunier.fr/events', {
             method: 'GET',
         })
             .then((response) => response.json())

@@ -16,14 +16,14 @@ export class Events extends JoDOM.Component {
     }
 
     componentDidMount() {
-        fetch('https://api-esgi.faispaschier.fr/events/', {
+        fetch('https://api-esgi.theomeunier.fr/events', {
             method: 'GET',
         })
             .then((response) => response.json())
             .then((data) => this.setState({ events: data }));
 
         // get all categories
-        fetch('https://api-esgi.faispaschier.fr/categories/', {
+        fetch('https://api-esgi.theomeunier.fr/categories', {
             method: 'GET',
         })
             .then((response) => response.json())
@@ -31,7 +31,7 @@ export class Events extends JoDOM.Component {
     }
 
     handleSelectEventWithCategory = (category, date) => {
-        let url = 'https://api-esgi.faispaschier.fr/events';
+        let url = 'https://api-esgi.theomeunier.fr/events';
         let query = '';
 
         if (category && category !== 'category') {
