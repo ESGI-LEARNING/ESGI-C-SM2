@@ -35,7 +35,7 @@ export default class mapHome extends JoDOM.Component {
                     .openPopup();
 
                 fetch(
-                    `https://api-esgi.faispaschier.fr/spots/?longitude=${longitude}&latitude=${latitude}`,
+                    `https://api-esgi.theomeunier.fr/spots/?longitude=${longitude}&latitude=${latitude}`,
                     {
                         method: 'GET',
                     },
