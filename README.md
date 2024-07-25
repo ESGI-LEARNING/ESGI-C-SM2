@@ -4,13 +4,28 @@
 
 -   Théo MEUNIER - [Github](https://github.com/TheoMeunier)
 
-
+    - Routing
+    - DOM
+    - Genération de la structure
+    - Evolution d'état dans un Component
+    - Filtre Categorie
+    - Validation du Props
+    - Refacto
+    - Mise en production
 
 -   Philippe DELENTE - [Github](https://github.com/PhilDaiguille)
 
-Map interactive
+    - Map interactive avec leaflet
+    - intégration scss
+    - Filtre Date
+    - Page intégration Home - Liste d'évenement - Map interactive
+    - Créer les components
 
 -   Quentin ANDRIEU - [Github](https://github.com/Tinou95)
+
+    - intégration scss / responsive
+    - Page intégration Contact
+    - Mise en place des variables scss
 
 
 # 📕 Maquette Figma
