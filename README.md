@@ -27,6 +27,9 @@
     - Page intégration Contact
     - Mise en place des variables scss
 
+Point bonus : 
+    - Géolocalisation de l'utilisateur
+    - Interaction avec des APIs externes
 
 # 📕 Maquette Figma
 
