@@ -1,4 +1,4 @@
-FROM node:22-alpine as build
+FROM docker.io/node:22-alpine AS build
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-FROM nginx:alpine
+FROM docker.io/nginx:alpine
 
 COPY --from=build /app /usr/share/nginx/html
 
